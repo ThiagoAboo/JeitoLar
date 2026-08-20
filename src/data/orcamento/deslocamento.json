@@ -1,0 +1,51 @@
+{
+  "baseReferencia": "Alcântara, São Gonçalo - RJ",
+  "valorKm": 1.3,
+  "idaEVolta": true,
+  "arredondamento": 5,
+  "observacao": "Política introdutória de baixo custo. A mão de obra é uniforme por região; apenas o deslocamento varia conforme a localidade.",
+  "regioes": {
+    "sao-goncalo": {
+      "metodo": "publico",
+      "distanciaReferenciaKmIda": 7,
+      "taxaMinima": 10,
+      "publicoIdaVolta": 10,
+      "custoTempoPublico": 0
+    },
+    "niteroi": {
+      "metodo": "publico",
+      "distanciaReferenciaKmIda": 20,
+      "taxaMinima": 20,
+      "publicoIdaVolta": 20,
+      "custoTempoPublico": 0
+    },
+    "marica": {
+      "metodo": "publico",
+      "distanciaReferenciaKmIda": 35,
+      "taxaMinima": 25,
+      "publicoIdaVolta": 25,
+      "custoTempoPublico": 0
+    },
+    "itaborai": {
+      "metodo": "publico",
+      "distanciaReferenciaKmIda": 25,
+      "taxaMinima": 20,
+      "publicoIdaVolta": 20,
+      "custoTempoPublico": 0
+    },
+    "centro-rio": {
+      "metodo": "publico",
+      "distanciaReferenciaKmIda": 35,
+      "taxaMinima": 30,
+      "publicoIdaVolta": 32,
+      "custoTempoPublico": 0
+    },
+    "zona-sul-rio": {
+      "metodo": "publico",
+      "distanciaReferenciaKmIda": 45,
+      "taxaMinima": 45,
+      "publicoIdaVolta": 45,
+      "custoTempoPublico": 0
+    }
+  }
+}

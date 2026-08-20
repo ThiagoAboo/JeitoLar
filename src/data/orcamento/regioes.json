@@ -1,0 +1,44 @@
+[
+  {
+    "id": "sao-goncalo",
+    "nome": "São Gonçalo",
+    "uf": "RJ",
+    "seoPath": "/sao-goncalo/",
+    "ordem": 1
+  },
+  {
+    "id": "niteroi",
+    "nome": "Niterói",
+    "uf": "RJ",
+    "seoPath": "/niteroi/",
+    "ordem": 2
+  },
+  {
+    "id": "marica",
+    "nome": "Maricá",
+    "uf": "RJ",
+    "seoPath": "/marica/",
+    "ordem": 3
+  },
+  {
+    "id": "itaborai",
+    "nome": "Itaboraí",
+    "uf": "RJ",
+    "seoPath": "/itaborai/",
+    "ordem": 4
+  },
+  {
+    "id": "centro-rio",
+    "nome": "Centro do Rio",
+    "uf": "RJ",
+    "seoPath": "/rio-de-janeiro/centro/",
+    "ordem": 5
+  },
+  {
+    "id": "zona-sul-rio",
+    "nome": "Zona Sul do Rio",
+    "uf": "RJ",
+    "seoPath": "/rio-de-janeiro/zona-sul/",
+    "ordem": 6
+  }
+]

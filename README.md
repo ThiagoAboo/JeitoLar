@@ -1,146 +1,122 @@
-# JeitoLar — SEO local por região
+# JeitoLar 2.2
 
-Este pacote contém a versão completa do site com páginas locais para:
+Versão completa do site JeitoLar com SEO local, catálogo ampliado e orçamento automático.
 
-- São Gonçalo
-- Niterói
-- Maricá
-- Itaboraí
-- Centro do Rio de Janeiro
-- Zona Sul do Rio de Janeiro
+## Principais mudanças desta versão
 
-## URLs
+- 56 serviços organizados em 7 grupos.
+- Novos grupos: **Jardim e quintal** e **Piscina**.
+- Mão de obra base igual em todas as regiões; somente deslocamento varia.
+- Preços introdutórios posicionados na faixa baixa do mercado para captação inicial.
+- Deslocamento promocional reduzido.
+- Resumo **Sua estimativa** acompanha o scroll sem barra de rolagem interna.
+- Resumo mostra até 4 serviços por padrão e oferece **Ver mais** quando necessário.
+- Mensagem do WhatsApp sem emojis para evitar caracteres quebrados.
+- Pacotes: 4h por R$ 260 e 8h por R$ 450 para serviços elegíveis.
 
-- `/`
-- `/sao-goncalo/`
-- `/niteroi/`
-- `/marica/`
-- `/itaborai/`
-- `/rio-de-janeiro/centro/`
-- `/rio-de-janeiro/zona-sul/`
-
-## Importante antes de substituir o projeto atual
-
-Preserve estes arquivos do seu projeto existente:
-
-1. `.env`
-2. `public/google1298e2f9fd81c865.html`
-
-O arquivo de verificação do Google não está neste ZIP porque o conteúdo precisa ser exatamente o arquivo fornecido pelo Search Console.
-
-## Como instalar sobre o projeto atual
-
-Faça um backup ou commit primeiro:
-
-```powershell
-git add .
-git commit -m "chore: backup antes das paginas locais"
-git push
-```
-
-Depois extraia este ZIP em uma pasta temporária e copie os arquivos para:
+## Grupos de serviço
 
 ```text
-D:\Projetos\JeitoLar
+/servicos/eletrica/
+/servicos/hidraulica/
+/servicos/instalacoes/
+/servicos/montagem/
+/servicos/pequenos-reparos/
+/servicos/jardim-quintal/
+/servicos/piscina/
 ```
 
-Pode sobrescrever os arquivos do projeto, mas mantenha o `.env` e o arquivo `public/google1298e2f9fd81c865.html`.
-
-Depois:
-
-```powershell
-npm install
-npm run dev
-```
-
-Teste as rotas:
+## Arquivos comerciais
 
 ```text
-http://localhost:5173/
-http://localhost:5173/sao-goncalo/
-http://localhost:5173/niteroi/
-http://localhost:5173/marica/
-http://localhost:5173/itaborai/
-http://localhost:5173/rio-de-janeiro/centro/
-http://localhost:5173/rio-de-janeiro/zona-sul/
+src/data/orcamento/
+├── servicos.json
+├── precos.json
+├── regioes.json
+├── bairros.json
+├── deslocamento.json
+├── pacotes.json
+└── configuracao.json
 ```
 
-## Build SEO
+`precos.json` mantém a estrutura por região para o sistema continuar exigindo localidade antes de mostrar o preço, mas nesta política os valores de mão de obra são uniformes. A diferença geográfica fica no deslocamento.
 
-O comando:
+## Antes de substituir o projeto atual
 
-```powershell
-npm run build
-```
-
-faz duas coisas:
-
-1. Executa o build do Vite.
-2. Gera arquivos HTML físicos em `dist` para cada rota local, cada um com:
-   - title próprio;
-   - meta description própria;
-   - canonical próprio;
-   - Open Graph próprio;
-   - Twitter metadata;
-   - JSON-LD de Service por área;
-   - sitemap.xml atualizado.
-
-Isso melhora a resposta inicial das páginas para robôs de busca sem depender apenas da execução do JavaScript.
-
-## Verificação Google Search Console
-
-Mantenha:
+Preserve:
 
 ```text
+.env
+package-lock.json
 public/google1298e2f9fd81c865.html
 ```
 
-Depois de `npm run build`, confira:
+Se o workflow atual do GitHub Actions já funciona, também preserve `.github/workflows/deploy.yml` ou compare antes de sobrescrever.
+
+## Instalar e testar
 
 ```powershell
-Test-Path .\dist\google1298e2f9fd81c865.html
+npm install
+npm run check:data
+npm run build
+npm run dev
 ```
 
-Deve retornar:
+Teste especialmente:
 
 ```text
-True
+http://localhost:5173/orcamento/
+http://localhost:5173/servicos/jardim-quintal/
+http://localhost:5173/servicos/piscina/
 ```
 
 ## Publicação
 
-Como o GitHub Actions já está configurado, depois dos testes:
-
 ```powershell
 git add .
-git commit -m "feat: adiciona paginas locais e SEO regional"
+git commit -m "feat: JeitoLar 2.2 preços introdutórios e novos serviços"
 git push
 ```
 
-O deploy do Cloudflare Pages será disparado automaticamente.
+Veja `CORRECOES-2.2.md` e `PESQUISA-PRECOS-2.2.md`.
 
-## Search Console depois do deploy
+## Atualização 2.3
 
-Envie novamente:
+- `profissional-ferramentas.webp` permanece somente no hero e foi removida da galeria.
+- O painel **Sua estimativa** usa sticky no desktop sem scrollbar interna.
+- A mensagem do WhatsApp foi reorganizada em blocos mais limpos e sem emojis.
+- Consulte `CORRECOES-2.3.md` para os detalhes.
+
+
+## Atualização 2.5
+
+- Oculta quantidade em serviços limitados a uma unidade.
+- Adiciona botão rápido **Enviar orçamento** no topo do resumo.
+- Envio agora direciona automaticamente ao primeiro campo obrigatório faltante.
+- Veja `CORRECOES-2.5.md`.
+
+## Atualização 2.6
+
+### Região global
+
+O cabeçalho agora possui um seletor de região. A escolha é salva no navegador e reaproveitada em páginas de serviços e no orçamento.
+
+### Instalação no Android/iOS
+
+A JeitoLar agora é uma PWA instalável. Após publicar em HTTPS, acesse:
 
 ```text
-https://jeitolar.pages.dev/sitemap.xml
+https://jeitolar.pages.dev/instalar/
 ```
 
-E solicite indexação para:
+No Android, o navegador pode oferecer o botão **Instalar JeitoLar agora**.
+
+No iPhone/iPad, abra o site no Safari e use **Compartilhar → Adicionar à Tela de Início**.
+
+Os arquivos PWA ficam em:
 
 ```text
-https://jeitolar.pages.dev/
-https://jeitolar.pages.dev/sao-goncalo/
-https://jeitolar.pages.dev/niteroi/
-https://jeitolar.pages.dev/marica/
-https://jeitolar.pages.dev/itaborai/
-https://jeitolar.pages.dev/rio-de-janeiro/centro/
-https://jeitolar.pages.dev/rio-de-janeiro/zona-sul/
+public/site.webmanifest
+public/sw.js
+public/pwa/
 ```
-
-## Conteúdo local
-
-Os textos não são simples cópias com o nome da cidade trocado. Cada página possui introdução, observação de atendimento e lista de bairros/regiões de referência próprias.
-
-Antes de divulgar intensamente, revise os bairros listados e remova qualquer área em que você não queira atender.

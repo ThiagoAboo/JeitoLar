@@ -1,0 +1,752 @@
+[
+  {
+    "id": "visita-reparo-simples",
+    "nome": "Visita / reparo simples até 1h",
+    "categoria": "Pequenos reparos",
+    "descricao": "Ajustes simples e pequenos reparos que possam ser resolvidos em até uma hora.",
+    "duracaoMin": 30,
+    "duracaoMax": 60,
+    "repetivel": false,
+    "qtdMax": 1,
+    "adicionalPercentual": 1.0,
+    "pacoteElegivel": true
+  },
+  {
+    "id": "fechadura",
+    "nome": "Trocar fechadura simples",
+    "categoria": "Pequenos reparos",
+    "descricao": "Substituição de fechadura convencional compatível com a porta, sem grandes adaptações.",
+    "duracaoMin": 35,
+    "duracaoMax": 70,
+    "repetivel": true,
+    "qtdMax": 5,
+    "adicionalPercentual": 0.7,
+    "pacoteElegivel": true
+  },
+  {
+    "id": "macaneta-dobradica",
+    "nome": "Trocar maçaneta, puxador ou dobradiça",
+    "categoria": "Pequenos reparos",
+    "descricao": "Troca ou ajuste simples de maçanetas, puxadores e dobradiças acessíveis.",
+    "duracaoMin": 20,
+    "duracaoMax": 45,
+    "repetivel": true,
+    "qtdMax": 10,
+    "adicionalPercentual": 0.5,
+    "pacoteElegivel": true
+  },
+  {
+    "id": "ajuste-porta",
+    "nome": "Ajuste simples de porta",
+    "categoria": "Pequenos reparos",
+    "descricao": "Alinhamento leve, reaperto, ajuste de dobradiças ou pequenas correções sem marcenaria pesada.",
+    "duracaoMin": 30,
+    "duracaoMax": 70,
+    "repetivel": true,
+    "qtdMax": 4,
+    "adicionalPercentual": 0.7,
+    "pacoteElegivel": true
+  },
+  {
+    "id": "vedacao-silicone",
+    "nome": "Refazer vedação com silicone",
+    "categoria": "Pequenos reparos",
+    "descricao": "Remoção pontual e aplicação de silicone em pia, bancada, box ou área semelhante.",
+    "duracaoMin": 30,
+    "duracaoMax": 60,
+    "repetivel": true,
+    "qtdMax": 6,
+    "adicionalPercentual": 0.65,
+    "pacoteElegivel": true
+  },
+  {
+    "id": "tomada-interruptor",
+    "nome": "Trocar tomada ou interruptor",
+    "categoria": "Elétrica",
+    "descricao": "Substituição de tomada ou interruptor utilizando a instalação existente.",
+    "duracaoMin": 20,
+    "duracaoMax": 35,
+    "repetivel": true,
+    "qtdMax": 12,
+    "adicionalPercentual": 0.5,
+    "pacoteElegivel": true
+  },
+  {
+    "id": "luminaria",
+    "nome": "Instalar luminária simples",
+    "categoria": "Elétrica",
+    "descricao": "Instalação ou substituição de luminária em ponto elétrico existente.",
+    "duracaoMin": 25,
+    "duracaoMax": 50,
+    "repetivel": true,
+    "qtdMax": 10,
+    "adicionalPercentual": 0.55,
+    "pacoteElegivel": true
+  },
+  {
+    "id": "lampada-plafon",
+    "nome": "Trocar lâmpada ou plafon simples",
+    "categoria": "Elétrica",
+    "descricao": "Troca de lâmpada, soquete ou plafon simples em altura residencial comum.",
+    "duracaoMin": 15,
+    "duracaoMax": 30,
+    "repetivel": true,
+    "qtdMax": 12,
+    "adicionalPercentual": 0.45,
+    "pacoteElegivel": true
+  },
+  {
+    "id": "chuveiro",
+    "nome": "Instalar ou trocar chuveiro elétrico",
+    "categoria": "Elétrica",
+    "descricao": "Instalação ou troca de chuveiro com ponto elétrico já compatível.",
+    "duracaoMin": 40,
+    "duracaoMax": 80,
+    "repetivel": false,
+    "qtdMax": 1,
+    "adicionalPercentual": 1.0,
+    "pacoteElegivel": true,
+    "extras": [
+      {
+        "id": "fiacao-nova",
+        "nome": "Precisa adequar fiação/disjuntor",
+        "valor": 80
+      }
+    ]
+  },
+  {
+    "id": "resistencia-chuveiro",
+    "nome": "Trocar resistência de chuveiro",
+    "categoria": "Elétrica",
+    "descricao": "Troca de resistência em chuveiro compatível, com acesso normal e peça fornecida pelo cliente.",
+    "duracaoMin": 25,
+    "duracaoMax": 45,
+    "repetivel": false,
+    "qtdMax": 1,
+    "adicionalPercentual": 1.0,
+    "pacoteElegivel": true
+  },
+  {
+    "id": "ventilador",
+    "nome": "Instalar ventilador de teto",
+    "categoria": "Elétrica",
+    "descricao": "Instalação de ventilador de teto em ponto existente e estrutura adequada.",
+    "duracaoMin": 60,
+    "duracaoMax": 100,
+    "repetivel": true,
+    "qtdMax": 4,
+    "adicionalPercentual": 0.75,
+    "pacoteElegivel": true,
+    "extras": [
+      {
+        "id": "controle-remoto",
+        "nome": "Modelo com controle remoto",
+        "valor": 25
+      }
+    ]
+  },
+  {
+    "id": "disjuntor",
+    "nome": "Trocar disjuntor simples",
+    "categoria": "Elétrica",
+    "descricao": "Substituição de um disjuntor equivalente em quadro acessível, sem alteração de circuito.",
+    "duracaoMin": 20,
+    "duracaoMax": 45,
+    "repetivel": true,
+    "qtdMax": 6,
+    "adicionalPercentual": 0.6,
+    "pacoteElegivel": true
+  },
+  {
+    "id": "campainha",
+    "nome": "Instalar ou trocar campainha simples",
+    "categoria": "Elétrica",
+    "descricao": "Instalação ou substituição em ponto existente e compatível.",
+    "duracaoMin": 25,
+    "duracaoMax": 50,
+    "repetivel": true,
+    "qtdMax": 4,
+    "adicionalPercentual": 0.65,
+    "pacoteElegivel": true
+  },
+  {
+    "id": "sensor-presenca",
+    "nome": "Instalar sensor de presença",
+    "categoria": "Elétrica",
+    "descricao": "Instalação de sensor em ponto elétrico existente e acessível.",
+    "duracaoMin": 30,
+    "duracaoMax": 60,
+    "repetivel": true,
+    "qtdMax": 6,
+    "adicionalPercentual": 0.65,
+    "pacoteElegivel": true
+  },
+  {
+    "id": "refletor",
+    "nome": "Instalar refletor simples",
+    "categoria": "Elétrica",
+    "descricao": "Fixação e ligação de refletor em ponto existente e acessível.",
+    "duracaoMin": 30,
+    "duracaoMax": 60,
+    "repetivel": true,
+    "qtdMax": 8,
+    "adicionalPercentual": 0.6,
+    "pacoteElegivel": true
+  },
+  {
+    "id": "torneira-vazamento",
+    "nome": "Trocar torneira / pequeno vazamento",
+    "categoria": "Hidráulica",
+    "descricao": "Troca de torneira ou correção de vazamento simples e acessível.",
+    "duracaoMin": 30,
+    "duracaoMax": 60,
+    "repetivel": true,
+    "qtdMax": 6,
+    "adicionalPercentual": 0.65,
+    "pacoteElegivel": true,
+    "extras": [
+      {
+        "id": "gourmet",
+        "nome": "Torneira gourmet/misturador",
+        "valor": 25
+      }
+    ]
+  },
+  {
+    "id": "sifao",
+    "nome": "Trocar sifão ou engate flexível",
+    "categoria": "Hidráulica",
+    "descricao": "Substituição de sifão, flexível ou conexão simples sob pia ou lavatório.",
+    "duracaoMin": 20,
+    "duracaoMax": 40,
+    "repetivel": true,
+    "qtdMax": 8,
+    "adicionalPercentual": 0.55,
+    "pacoteElegivel": true
+  },
+  {
+    "id": "ducha-higienica",
+    "nome": "Instalar ducha higiênica",
+    "categoria": "Hidráulica",
+    "descricao": "Instalação em ponto hidráulico existente, com registro e conexões compatíveis.",
+    "duracaoMin": 30,
+    "duracaoMax": 60,
+    "repetivel": true,
+    "qtdMax": 5,
+    "adicionalPercentual": 0.65,
+    "pacoteElegivel": true
+  },
+  {
+    "id": "filtro-purificador",
+    "nome": "Instalar filtro / purificador",
+    "categoria": "Hidráulica",
+    "descricao": "Instalação em ponto compatível e acessível, sem alteração complexa da tubulação.",
+    "duracaoMin": 30,
+    "duracaoMax": 60,
+    "repetivel": false,
+    "qtdMax": 1,
+    "adicionalPercentual": 1.0,
+    "pacoteElegivel": true
+  },
+  {
+    "id": "caixa-acoplada",
+    "nome": "Reparo de caixa acoplada",
+    "categoria": "Hidráulica",
+    "descricao": "Troca ou ajuste de mecanismo de entrada/saída quando acessível.",
+    "duracaoMin": 40,
+    "duracaoMax": 75,
+    "repetivel": true,
+    "qtdMax": 5,
+    "adicionalPercentual": 0.7,
+    "pacoteElegivel": true
+  },
+  {
+    "id": "vaso-sanitario",
+    "nome": "Instalar vaso sanitário",
+    "categoria": "Hidráulica",
+    "descricao": "Instalação em ponto existente e compatível. Materiais de vedação não inclusos.",
+    "duracaoMin": 80,
+    "duracaoMax": 140,
+    "repetivel": true,
+    "qtdMax": 3,
+    "adicionalPercentual": 0.8,
+    "pacoteElegivel": false,
+    "extras": [
+      {
+        "id": "retirada",
+        "nome": "Retirada do vaso antigo",
+        "valor": 50
+      }
+    ]
+  },
+  {
+    "id": "assento-sanitario",
+    "nome": "Trocar assento sanitário",
+    "categoria": "Hidráulica",
+    "descricao": "Retirada e instalação de assento sanitário compatível.",
+    "duracaoMin": 15,
+    "duracaoMax": 30,
+    "repetivel": true,
+    "qtdMax": 6,
+    "adicionalPercentual": 0.45,
+    "pacoteElegivel": true
+  },
+  {
+    "id": "desentupimento-simples",
+    "nome": "Desentupimento simples de pia ou sifão",
+    "categoria": "Hidráulica",
+    "descricao": "Desobstrução leve e acessível, sem uso de máquina profissional ou quebra de tubulação.",
+    "duracaoMin": 30,
+    "duracaoMax": 75,
+    "repetivel": true,
+    "qtdMax": 3,
+    "adicionalPercentual": 0.8,
+    "pacoteElegivel": true
+  },
+  {
+    "id": "acabamento-registro",
+    "nome": "Trocar acabamento de registro",
+    "categoria": "Hidráulica",
+    "descricao": "Troca do acabamento externo do registro, sem substituir a base embutida na parede.",
+    "duracaoMin": 20,
+    "duracaoMax": 40,
+    "repetivel": true,
+    "qtdMax": 6,
+    "adicionalPercentual": 0.55,
+    "pacoteElegivel": true
+  },
+  {
+    "id": "suporte-tv",
+    "nome": "Instalar suporte de TV",
+    "categoria": "Instalações",
+    "descricao": "Fixação de suporte e TV em parede adequada.",
+    "duracaoMin": 40,
+    "duracaoMax": 75,
+    "repetivel": true,
+    "qtdMax": 5,
+    "adicionalPercentual": 0.7,
+    "pacoteElegivel": true,
+    "extras": [
+      {
+        "id": "articulado",
+        "nome": "Suporte articulado",
+        "valor": 30
+      },
+      {
+        "id": "tv-grande",
+        "nome": "TV acima de 65 polegadas",
+        "valor": 30
+      },
+      {
+        "id": "porcelanato",
+        "nome": "Parede revestida/porcelanato",
+        "valor": 40
+      },
+      {
+        "id": "painel",
+        "nome": "Fixação em painel",
+        "valor": 25
+      }
+    ]
+  },
+  {
+    "id": "prateleira",
+    "nome": "Instalar prateleira / nicho",
+    "categoria": "Instalações",
+    "descricao": "Furação, nivelamento e instalação de prateleira ou nicho.",
+    "duracaoMin": 25,
+    "duracaoMax": 50,
+    "repetivel": true,
+    "qtdMax": 12,
+    "adicionalPercentual": 0.5,
+    "pacoteElegivel": true,
+    "extras": [
+      {
+        "id": "porcelanato",
+        "nome": "Parede revestida/porcelanato",
+        "valor": 20,
+        "porUnidade": true
+      }
+    ]
+  },
+  {
+    "id": "cortina-persiana",
+    "nome": "Instalar varão, cortina ou persiana",
+    "categoria": "Instalações",
+    "descricao": "Instalação de varão, trilho simples, cortina ou persiana.",
+    "duracaoMin": 25,
+    "duracaoMax": 55,
+    "repetivel": true,
+    "qtdMax": 8,
+    "adicionalPercentual": 0.55,
+    "pacoteElegivel": true
+  },
+  {
+    "id": "quadro-espelho",
+    "nome": "Instalar quadro, espelho ou decoração",
+    "categoria": "Instalações",
+    "descricao": "Fixação de quadros, espelhos leves/médios e peças decorativas em parede adequada.",
+    "duracaoMin": 20,
+    "duracaoMax": 50,
+    "repetivel": true,
+    "qtdMax": 12,
+    "adicionalPercentual": 0.45,
+    "pacoteElegivel": true,
+    "extras": [
+      {
+        "id": "pesado",
+        "nome": "Peça pesada ou com fixação especial",
+        "valor": 30,
+        "porUnidade": true
+      }
+    ]
+  },
+  {
+    "id": "acessorios-banheiro",
+    "nome": "Instalar acessórios de banheiro",
+    "categoria": "Instalações",
+    "descricao": "Fixação de papeleira, porta-toalha, saboneteira e acessórios semelhantes.",
+    "duracaoMin": 20,
+    "duracaoMax": 45,
+    "repetivel": true,
+    "qtdMax": 10,
+    "adicionalPercentual": 0.45,
+    "pacoteElegivel": true
+  },
+  {
+    "id": "varal-teto",
+    "nome": "Instalar varal de teto ou parede",
+    "categoria": "Instalações",
+    "descricao": "Fixação e montagem de varal em teto ou parede adequada.",
+    "duracaoMin": 45,
+    "duracaoMax": 90,
+    "repetivel": true,
+    "qtdMax": 3,
+    "adicionalPercentual": 0.75,
+    "pacoteElegivel": true
+  },
+  {
+    "id": "maquina-lavar",
+    "nome": "Instalar máquina de lavar",
+    "categoria": "Instalações",
+    "descricao": "Ligação em ponto hidráulico e esgoto já existentes.",
+    "duracaoMin": 25,
+    "duracaoMax": 50,
+    "repetivel": false,
+    "qtdMax": 1,
+    "adicionalPercentual": 1.0,
+    "pacoteElegivel": true
+  },
+  {
+    "id": "coifa-depurador",
+    "nome": "Instalar coifa / depurador simples",
+    "categoria": "Instalações",
+    "descricao": "Fixação e instalação simples com ponto compatível, sem duto complexo.",
+    "duracaoMin": 70,
+    "duracaoMax": 130,
+    "repetivel": false,
+    "qtdMax": 1,
+    "adicionalPercentual": 1.0,
+    "pacoteElegivel": false
+  },
+  {
+    "id": "suporte-microondas",
+    "nome": "Instalar suporte de micro-ondas",
+    "categoria": "Instalações",
+    "descricao": "Fixação de suporte em parede adequada, sem adaptação elétrica.",
+    "duracaoMin": 30,
+    "duracaoMax": 60,
+    "repetivel": true,
+    "qtdMax": 4,
+    "adicionalPercentual": 0.65,
+    "pacoteElegivel": true
+  },
+  {
+    "id": "soundbar",
+    "nome": "Instalar suporte de soundbar",
+    "categoria": "Instalações",
+    "descricao": "Fixação de suporte ou soundbar em parede/painel adequado.",
+    "duracaoMin": 25,
+    "duracaoMax": 50,
+    "repetivel": true,
+    "qtdMax": 5,
+    "adicionalPercentual": 0.6,
+    "pacoteElegivel": true
+  },
+  {
+    "id": "armario-parede",
+    "nome": "Fixar armário pequeno na parede",
+    "categoria": "Instalações",
+    "descricao": "Fixação de armário pequeno e leve/médio em parede adequada.",
+    "duracaoMin": 45,
+    "duracaoMax": 90,
+    "repetivel": true,
+    "qtdMax": 4,
+    "adicionalPercentual": 0.7,
+    "pacoteElegivel": true
+  },
+  {
+    "id": "movel-pequeno",
+    "nome": "Montar móvel pequeno",
+    "categoria": "Montagem",
+    "descricao": "Mesa lateral, criado, nicho de chão ou móvel de complexidade semelhante.",
+    "duracaoMin": 45,
+    "duracaoMax": 90,
+    "repetivel": true,
+    "qtdMax": 6,
+    "adicionalPercentual": 0.7,
+    "pacoteElegivel": true
+  },
+  {
+    "id": "comoda-rack",
+    "nome": "Montar cômoda / rack",
+    "categoria": "Montagem",
+    "descricao": "Montagem de cômoda, rack ou móvel de porte semelhante.",
+    "duracaoMin": 60,
+    "duracaoMax": 140,
+    "repetivel": true,
+    "qtdMax": 4,
+    "adicionalPercentual": 0.8,
+    "pacoteElegivel": true
+  },
+  {
+    "id": "guarda-roupa-medio",
+    "nome": "Montar guarda-roupa médio",
+    "categoria": "Montagem",
+    "descricao": "Montagem de guarda-roupa de casal pequeno ou médio, sem modificações.",
+    "duracaoMin": 120,
+    "duracaoMax": 240,
+    "repetivel": false,
+    "qtdMax": 1,
+    "adicionalPercentual": 1.0,
+    "pacoteElegivel": false
+  },
+  {
+    "id": "mesa-escrivaninha",
+    "nome": "Montar mesa ou escrivaninha",
+    "categoria": "Montagem",
+    "descricao": "Montagem de mesa, escrivaninha ou bancada simples.",
+    "duracaoMin": 35,
+    "duracaoMax": 80,
+    "repetivel": true,
+    "qtdMax": 5,
+    "adicionalPercentual": 0.65,
+    "pacoteElegivel": true
+  },
+  {
+    "id": "beliche",
+    "nome": "Montar beliche ou cama infantil",
+    "categoria": "Montagem",
+    "descricao": "Montagem de beliche ou cama infantil conforme manual e peças completas.",
+    "duracaoMin": 60,
+    "duracaoMax": 120,
+    "repetivel": true,
+    "qtdMax": 3,
+    "adicionalPercentual": 0.75,
+    "pacoteElegivel": true
+  },
+  {
+    "id": "desmontar-guarda-roupa",
+    "nome": "Desmontar guarda-roupa",
+    "categoria": "Montagem",
+    "descricao": "Desmontagem organizada para mudança ou remontagem posterior, sem transporte.",
+    "duracaoMin": 60,
+    "duracaoMax": 140,
+    "repetivel": true,
+    "qtdMax": 3,
+    "adicionalPercentual": 0.8,
+    "pacoteElegivel": false
+  },
+  {
+    "id": "cama",
+    "nome": "Montar cama ou cama box com estrutura",
+    "categoria": "Montagem",
+    "descricao": "Montagem de cama simples, estrutura ou união de base box quando compatível.",
+    "duracaoMin": 30,
+    "duracaoMax": 70,
+    "repetivel": true,
+    "qtdMax": 5,
+    "adicionalPercentual": 0.65,
+    "pacoteElegivel": true
+  },
+  {
+    "id": "armario-pequeno",
+    "nome": "Montar armário pequeno",
+    "categoria": "Montagem",
+    "descricao": "Montagem de armário pequeno de cozinha, banheiro ou multiuso.",
+    "duracaoMin": 45,
+    "duracaoMax": 100,
+    "repetivel": true,
+    "qtdMax": 5,
+    "adicionalPercentual": 0.7,
+    "pacoteElegivel": true
+  },
+  {
+    "id": "rocagem-quintal",
+    "nome": "Roçagem de quintal - até 50 m²",
+    "categoria": "Jardim e quintal",
+    "descricao": "Roçagem com roçadeira em área de até 50 m². Quantidade adicional representa novo bloco de até 50 m².",
+    "duracaoMin": 60,
+    "duracaoMax": 120,
+    "repetivel": true,
+    "qtdMax": 10,
+    "adicionalPercentual": 0.7,
+    "pacoteElegivel": false
+  },
+  {
+    "id": "capina-quintal",
+    "nome": "Capina manual - até 50 m²",
+    "categoria": "Jardim e quintal",
+    "descricao": "Capina e retirada de mato em área de até 50 m². Quantidade adicional representa novo bloco de até 50 m².",
+    "duracaoMin": 90,
+    "duracaoMax": 180,
+    "repetivel": true,
+    "qtdMax": 8,
+    "adicionalPercentual": 0.8,
+    "pacoteElegivel": false
+  },
+  {
+    "id": "manutencao-jardim",
+    "nome": "Jardinagem básica - até 2h",
+    "categoria": "Jardim e quintal",
+    "descricao": "Manutenção leve de jardim: limpeza, organização, retirada de folhas secas e cuidados simples.",
+    "duracaoMin": 90,
+    "duracaoMax": 120,
+    "repetivel": false,
+    "qtdMax": 1,
+    "adicionalPercentual": 1.0,
+    "pacoteElegivel": false
+  },
+  {
+    "id": "plantio-muda",
+    "nome": "Plantio de muda pequena",
+    "categoria": "Jardim e quintal",
+    "descricao": "Plantio de muda pequena em solo já acessível. Muda, terra e adubo não inclusos.",
+    "duracaoMin": 20,
+    "duracaoMax": 45,
+    "repetivel": true,
+    "qtdMax": 12,
+    "adicionalPercentual": 0.5,
+    "pacoteElegivel": false
+  },
+  {
+    "id": "transplante-vaso",
+    "nome": "Troca de vaso / transplante de planta",
+    "categoria": "Jardim e quintal",
+    "descricao": "Transplante de planta de pequeno ou médio porte entre vasos acessíveis.",
+    "duracaoMin": 20,
+    "duracaoMax": 45,
+    "repetivel": true,
+    "qtdMax": 10,
+    "adicionalPercentual": 0.5,
+    "pacoteElegivel": false
+  },
+  {
+    "id": "poda-planta-arbusto",
+    "nome": "Poda leve de planta ou arbusto",
+    "categoria": "Jardim e quintal",
+    "descricao": "Poda de manutenção em plantas, arbustos e cercas baixas, sem trabalho em altura.",
+    "duracaoMin": 20,
+    "duracaoMax": 50,
+    "repetivel": true,
+    "qtdMax": 12,
+    "adicionalPercentual": 0.55,
+    "pacoteElegivel": false
+  },
+  {
+    "id": "poda-arvore-pequena",
+    "nome": "Poda pequena de árvore - galhos baixos",
+    "categoria": "Jardim e quintal",
+    "descricao": "Poda leve de galhos baixos acessíveis a partir do chão ou escada doméstica, sem escalada e sem remoção de árvore.",
+    "duracaoMin": 45,
+    "duracaoMax": 90,
+    "repetivel": true,
+    "qtdMax": 4,
+    "adicionalPercentual": 0.8,
+    "pacoteElegivel": false
+  },
+  {
+    "id": "limpeza-quintal",
+    "nome": "Limpeza de quintal - até 50 m²",
+    "categoria": "Jardim e quintal",
+    "descricao": "Varrição, retirada de folhas e resíduos leves em área de até 50 m². Descarte externo não incluso.",
+    "duracaoMin": 60,
+    "duracaoMax": 120,
+    "repetivel": true,
+    "qtdMax": 8,
+    "adicionalPercentual": 0.7,
+    "pacoteElegivel": false
+  },
+  {
+    "id": "folhas-residuos",
+    "nome": "Recolhimento de folhas e resíduos leves",
+    "categoria": "Jardim e quintal",
+    "descricao": "Recolhimento e ensacamento de folhas, galhos finos e resíduos vegetais leves.",
+    "duracaoMin": 30,
+    "duracaoMax": 75,
+    "repetivel": true,
+    "qtdMax": 8,
+    "adicionalPercentual": 0.6,
+    "pacoteElegivel": false
+  },
+  {
+    "id": "limpeza-piscina",
+    "nome": "Limpeza básica de piscina - até 20 m²",
+    "categoria": "Piscina",
+    "descricao": "Peneiração, escovação, aspiração leve e limpeza de cestos/filtro acessível. Produtos químicos não inclusos.",
+    "duracaoMin": 60,
+    "duracaoMax": 120,
+    "repetivel": false,
+    "qtdMax": 1,
+    "adicionalPercentual": 1.0,
+    "pacoteElegivel": false,
+    "extras": [
+      {
+        "id": "media",
+        "nome": "Piscina entre 21 e 40 m²",
+        "valor": 50
+      },
+      {
+        "id": "agua-verde",
+        "nome": "Água verde / tratamento mais demorado",
+        "valor": 80
+      }
+    ]
+  },
+  {
+    "id": "aspiracao-piscina",
+    "nome": "Aspiração de piscina",
+    "categoria": "Piscina",
+    "descricao": "Aspiração do fundo em piscina com equipamento e sistema funcionando.",
+    "duracaoMin": 45,
+    "duracaoMax": 90,
+    "repetivel": false,
+    "qtdMax": 1,
+    "adicionalPercentual": 1.0,
+    "pacoteElegivel": false
+  },
+  {
+    "id": "limpeza-filtro-piscina",
+    "nome": "Limpeza de cesto e filtro da piscina",
+    "categoria": "Piscina",
+    "descricao": "Limpeza básica de cestos e filtro acessível, sem desmontagem ou reparo de bomba.",
+    "duracaoMin": 30,
+    "duracaoMax": 60,
+    "repetivel": false,
+    "qtdMax": 1,
+    "adicionalPercentual": 1.0,
+    "pacoteElegivel": false
+  },
+  {
+    "id": "tratamento-agua-piscina",
+    "nome": "Medição e ajuste básico da água",
+    "categoria": "Piscina",
+    "descricao": "Medição de pH e cloro e aplicação básica de produtos fornecidos pelo cliente.",
+    "duracaoMin": 30,
+    "duracaoMax": 60,
+    "repetivel": false,
+    "qtdMax": 1,
+    "adicionalPercentual": 1.0,
+    "pacoteElegivel": false
+  }
+]

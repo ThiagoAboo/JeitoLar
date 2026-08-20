@@ -1,0 +1,254 @@
+{
+  "sao-goncalo": [
+    {
+      "id": "alcantara",
+      "nome": "Alcântara",
+      "adicionalDeslocamento": 0
+    },
+    {
+      "id": "centro",
+      "nome": "Centro",
+      "adicionalDeslocamento": 0
+    },
+    {
+      "id": "trindade",
+      "nome": "Trindade",
+      "adicionalDeslocamento": 0
+    },
+    {
+      "id": "mutondo",
+      "nome": "Mutondo",
+      "adicionalDeslocamento": 0
+    },
+    {
+      "id": "colubande",
+      "nome": "Colubandê",
+      "adicionalDeslocamento": 0
+    },
+    {
+      "id": "neves",
+      "nome": "Neves",
+      "adicionalDeslocamento": 5
+    },
+    {
+      "id": "rocha",
+      "nome": "Rocha",
+      "adicionalDeslocamento": 0
+    },
+    {
+      "id": "arsenal",
+      "nome": "Arsenal",
+      "adicionalDeslocamento": 0
+    },
+    {
+      "id": "outro",
+      "nome": "Outro bairro",
+      "adicionalDeslocamento": 5
+    }
+  ],
+  "niteroi": [
+    {
+      "id": "icarai",
+      "nome": "Icaraí",
+      "adicionalDeslocamento": 0
+    },
+    {
+      "id": "santa-rosa",
+      "nome": "Santa Rosa",
+      "adicionalDeslocamento": 0
+    },
+    {
+      "id": "inga",
+      "nome": "Ingá",
+      "adicionalDeslocamento": 0
+    },
+    {
+      "id": "sao-francisco",
+      "nome": "São Francisco",
+      "adicionalDeslocamento": 5
+    },
+    {
+      "id": "fonseca",
+      "nome": "Fonseca",
+      "adicionalDeslocamento": 0
+    },
+    {
+      "id": "itaipu",
+      "nome": "Itaipu",
+      "adicionalDeslocamento": 10
+    },
+    {
+      "id": "pendotiba",
+      "nome": "Pendotiba",
+      "adicionalDeslocamento": 5
+    },
+    {
+      "id": "regiao-oceanica",
+      "nome": "Região Oceânica",
+      "adicionalDeslocamento": 10
+    },
+    {
+      "id": "outro",
+      "nome": "Outro bairro",
+      "adicionalDeslocamento": 5
+    }
+  ],
+  "marica": [
+    {
+      "id": "centro",
+      "nome": "Centro",
+      "adicionalDeslocamento": 0
+    },
+    {
+      "id": "itaipuacu",
+      "nome": "Itaipuaçu",
+      "adicionalDeslocamento": 5
+    },
+    {
+      "id": "inoa",
+      "nome": "Inoã",
+      "adicionalDeslocamento": 0
+    },
+    {
+      "id": "sao-jose",
+      "nome": "São José do Imbassaí",
+      "adicionalDeslocamento": 0
+    },
+    {
+      "id": "ponta-negra",
+      "nome": "Ponta Negra",
+      "adicionalDeslocamento": 10
+    },
+    {
+      "id": "cordeirinho",
+      "nome": "Cordeirinho",
+      "adicionalDeslocamento": 10
+    },
+    {
+      "id": "outro",
+      "nome": "Outro bairro",
+      "adicionalDeslocamento": 10
+    }
+  ],
+  "itaborai": [
+    {
+      "id": "centro",
+      "nome": "Centro",
+      "adicionalDeslocamento": 0
+    },
+    {
+      "id": "manilha",
+      "nome": "Manilha",
+      "adicionalDeslocamento": 0
+    },
+    {
+      "id": "venda-das-pedras",
+      "nome": "Venda das Pedras",
+      "adicionalDeslocamento": 0
+    },
+    {
+      "id": "ampliacao",
+      "nome": "Ampliação",
+      "adicionalDeslocamento": 0
+    },
+    {
+      "id": "outeiro-das-pedras",
+      "nome": "Outeiro das Pedras",
+      "adicionalDeslocamento": 0
+    },
+    {
+      "id": "itambi",
+      "nome": "Itambi",
+      "adicionalDeslocamento": 5
+    },
+    {
+      "id": "outro",
+      "nome": "Outro bairro",
+      "adicionalDeslocamento": 5
+    }
+  ],
+  "centro-rio": [
+    {
+      "id": "centro",
+      "nome": "Centro",
+      "adicionalDeslocamento": 0
+    },
+    {
+      "id": "lapa",
+      "nome": "Lapa",
+      "adicionalDeslocamento": 0
+    },
+    {
+      "id": "gloria",
+      "nome": "Glória",
+      "adicionalDeslocamento": 0
+    },
+    {
+      "id": "saude",
+      "nome": "Saúde",
+      "adicionalDeslocamento": 0
+    },
+    {
+      "id": "gamboa",
+      "nome": "Gamboa",
+      "adicionalDeslocamento": 0
+    },
+    {
+      "id": "santo-cristo",
+      "nome": "Santo Cristo",
+      "adicionalDeslocamento": 0
+    },
+    {
+      "id": "outro",
+      "nome": "Outro bairro próximo",
+      "adicionalDeslocamento": 5
+    }
+  ],
+  "zona-sul-rio": [
+    {
+      "id": "botafogo",
+      "nome": "Botafogo",
+      "adicionalDeslocamento": 0
+    },
+    {
+      "id": "flamengo",
+      "nome": "Flamengo",
+      "adicionalDeslocamento": 0
+    },
+    {
+      "id": "copacabana",
+      "nome": "Copacabana",
+      "adicionalDeslocamento": 0
+    },
+    {
+      "id": "ipanema",
+      "nome": "Ipanema",
+      "adicionalDeslocamento": 5
+    },
+    {
+      "id": "leblon",
+      "nome": "Leblon",
+      "adicionalDeslocamento": 10
+    },
+    {
+      "id": "laranjeiras",
+      "nome": "Laranjeiras",
+      "adicionalDeslocamento": 0
+    },
+    {
+      "id": "humaita",
+      "nome": "Humaitá",
+      "adicionalDeslocamento": 0
+    },
+    {
+      "id": "jardim-botanico",
+      "nome": "Jardim Botânico",
+      "adicionalDeslocamento": 5
+    },
+    {
+      "id": "outro",
+      "nome": "Outro bairro da Zona Sul",
+      "adicionalDeslocamento": 5
+    }
+  ]
+}

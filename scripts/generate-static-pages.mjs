@@ -1,159 +1,24 @@
-import fs from "node:fs";
-import path from "node:path";
-
-const SITE = "https://jeitolar.pages.dev";
-
-const pages = [
-  {
-    route: "/",
-    title: "JeitoLar | Faz-Tudo e Reparos Residenciais no Grande Rio",
-    description:
-      "JeitoLar oferece faz-tudo, reparos, instalações e manutenção residencial em São Gonçalo, Niterói, Maricá, Itaboraí, Centro e Zona Sul do Rio."
-  },
-  {
-    route: "/sao-goncalo/",
-    title: "Faz-Tudo em São Gonçalo | Reparos Residenciais | JeitoLar",
-    description:
-      "Faz-tudo em São Gonçalo para pequenos reparos, instalações, montagem e manutenção residencial. Solicite orçamento com a JeitoLar pelo WhatsApp.",
-    area: "São Gonçalo"
-  },
-  {
-    route: "/niteroi/",
-    title: "Faz-Tudo em Niterói | Reparos e Instalações | JeitoLar",
-    description:
-      "Faz-tudo em Niterói para instalações, pequenos reparos, montagem de móveis e manutenção residencial. Peça um orçamento à JeitoLar.",
-    area: "Niterói"
-  },
-  {
-    route: "/marica/",
-    title: "Faz-Tudo em Maricá | Manutenção Residencial | JeitoLar",
-    description:
-      "Serviço de faz-tudo em Maricá para reparos, instalações, montagem, elétrica e hidráulica leve. Consulte a JeitoLar e solicite orçamento.",
-    area: "Maricá"
-  },
-  {
-    route: "/itaborai/",
-    title: "Faz-Tudo em Itaboraí | Reparos e Manutenção | JeitoLar",
-    description:
-      "Faz-tudo em Itaboraí para reparos residenciais, instalações, montagem de móveis e manutenção. Solicite orçamento pelo WhatsApp.",
-    area: "Itaboraí"
-  },
-  {
-    route: "/rio-de-janeiro/centro/",
-    title: "Faz-Tudo no Centro do Rio | Reparos Residenciais | JeitoLar",
-    description:
-      "Faz-tudo no Centro do Rio para reparos, instalações e manutenção em apartamentos e residências. Atendimento JeitoLar mediante agendamento.",
-    area: "Centro do Rio de Janeiro"
-  },
-  {
-    route: "/rio-de-janeiro/zona-sul/",
-    title: "Faz-Tudo na Zona Sul do Rio | JeitoLar",
-    description:
-      "Faz-tudo na Zona Sul do Rio para reparos, instalações, montagem e manutenção residencial. Solicite orçamento com a JeitoLar.",
-    area: "Zona Sul do Rio de Janeiro"
-  }
+import fs from "node:fs"; import path from "node:path";
+const SITE="https://jeitolar.pages.dev";
+const pages=[
+ {route:"/",title:"JeitoLar | Faz-Tudo e Reparos Residenciais no Grande Rio",description:"JeitoLar oferece faz-tudo, reparos, instalações e manutenção residencial no Grande Rio. Monte sua estimativa online e envie pelo WhatsApp."},
+ {route:"/orcamento/",title:"Orçamento Online | JeitoLar",description:"Monte uma estimativa de serviços residenciais, deslocamento e quantidades e envie o pedido completo pelo WhatsApp."},
+ {route:"/instalar/",title:"Instalar JeitoLar no celular | JeitoLar",description:"Instale a JeitoLar como aplicativo no Android ou iPhone e acesse serviços e orçamento direto da tela inicial."},
+ {route:"/sao-goncalo/",title:"Faz-Tudo em São Gonçalo | Reparos Residenciais | JeitoLar",description:"Faz-tudo em São Gonçalo para pequenos reparos, instalações, montagem e manutenção residencial. Monte sua estimativa online com a JeitoLar."},
+ {route:"/niteroi/",title:"Faz-Tudo em Niterói | Reparos e Instalações | JeitoLar",description:"Faz-tudo em Niterói para instalações, pequenos reparos, montagem de móveis e manutenção residencial. Calcule uma estimativa online."},
+ {route:"/marica/",title:"Faz-Tudo em Maricá | Manutenção Residencial | JeitoLar",description:"Serviço de faz-tudo em Maricá para reparos, instalações, montagem, elétrica e hidráulica leve. Monte seu orçamento estimado."},
+ {route:"/itaborai/",title:"Faz-Tudo em Itaboraí | Reparos e Manutenção | JeitoLar",description:"Faz-tudo em Itaboraí para reparos residenciais, instalações, montagem de móveis e manutenção. Consulte uma estimativa no site."},
+ {route:"/rio-de-janeiro/centro/",title:"Faz-Tudo no Centro do Rio | Reparos Residenciais | JeitoLar",description:"Faz-tudo no Centro do Rio para reparos, instalações e manutenção em apartamentos e residências. Faça uma estimativa online."},
+ {route:"/rio-de-janeiro/zona-sul/",title:"Faz-Tudo na Zona Sul do Rio | JeitoLar",description:"Faz-tudo na Zona Sul do Rio para reparos, instalações, montagem e manutenção residencial. Consulte sua estimativa online."},
+ {route:"/servicos/eletrica/",title:"Serviços Elétricos Residenciais | JeitoLar",description:"Tomadas, interruptores, luminárias, chuveiros e ventiladores. Selecione a região para consultar os valores de referência."},
+ {route:"/servicos/hidraulica/",title:"Serviços Hidráulicos Residenciais | JeitoLar",description:"Torneiras, pequenos vazamentos, filtros, caixas acopladas e vasos sanitários. Selecione sua região para consultar valores."},
+ {route:"/servicos/instalacoes/",title:"Instalações Residenciais | JeitoLar",description:"Suportes de TV, prateleiras, cortinas, persianas, máquina de lavar, coifa e depurador. Consulte os valores após selecionar a região."},
+ {route:"/servicos/montagem/",title:"Montagem de Móveis Residenciais | JeitoLar",description:"Montagem de móveis pequenos, cômodas, racks e guarda-roupas. Selecione a região para consultar os valores de referência."},
+ {route:"/servicos/pequenos-reparos/",title:"Pequenos Reparos Residenciais | JeitoLar",description:"Visita para reparos simples, fechaduras, ajustes e vedações. Selecione a região para consultar valores."},
+ {route:"/servicos/jardim-quintal/",title:"Jardinagem e Limpeza de Quintal | JeitoLar",description:"Roçagem, capina, limpeza de quintal, jardinagem, plantio e pequenas podas. Selecione a região para consultar valores."},
+ {route:"/servicos/piscina/",title:"Limpeza e Manutenção Básica de Piscina | JeitoLar",description:"Limpeza, aspiração, filtro e medição básica de piscina residencial. Selecione a região para consultar valores."}
 ];
-
-const dist = path.resolve("dist");
-const sourceHtml = fs.readFileSync(path.join(dist, "index.html"), "utf8");
-
-function escapeJsonForHtml(value) {
-  return JSON.stringify(value).replace(/</g, "\\u003c");
-}
-
-function routeSchema(page) {
-  if (!page.area) return "";
-
-  const telephoneRaw = process.env.VITE_WHATSAPP_NUMBER || "";
-  const telephone = telephoneRaw ? `+${telephoneRaw}` : undefined;
-
-  const schema = {
-    "@context": "https://schema.org",
-    "@type": "Service",
-    "name": `Serviços de faz-tudo em ${page.area}`,
-    "serviceType": [
-      "Faz-tudo",
-      "Reparos residenciais",
-      "Instalações residenciais",
-      "Manutenção residencial",
-      "Montagem de móveis"
-    ],
-    "provider": {
-      "@type": "Organization",
-      "@id": `${SITE}/#organization`,
-      "name": "JeitoLar",
-      "url": `${SITE}/`,
-      "email": "jeitolar@gmail.com",
-      ...(telephone ? { "telephone": telephone } : {})
-    },
-    "areaServed": {
-      "@type": "AdministrativeArea",
-      "name": page.area
-    },
-    "url": new URL(page.route, SITE).toString()
-  };
-
-  return `<script id="route-static-schema" type="application/ld+json">${escapeJsonForHtml(schema)}</script>`;
-}
-
-function applyMeta(html, page) {
-  const canonical = new URL(page.route, SITE).toString();
-
-  return html
-    .replace(/<title>[\s\S]*?<\/title>/, `<title>${page.title}</title>`)
-    .replace(
-      /<meta\s+name="description"\s+content="[^"]*"\s*\/>/,
-      `<meta name="description" content="${page.description.replaceAll('"', "&quot;")}" />`
-    )
-    .replace(
-      /<link\s+rel="canonical"\s+href="[^"]*"\s*\/>/,
-      `<link rel="canonical" href="${canonical}" />`
-    )
-    .replace(
-      /<meta\s+property="og:title"\s+content="[^"]*"\s*\/>/,
-      `<meta property="og:title" content="${page.title.replaceAll('"', "&quot;")}" />`
-    )
-    .replace(
-      /<meta\s+property="og:description"\s+content="[^"]*"\s*\/>/,
-      `<meta property="og:description" content="${page.description.replaceAll('"', "&quot;")}" />`
-    )
-    .replace(
-      /<meta\s+property="og:url"\s+content="[^"]*"\s*\/>/,
-      `<meta property="og:url" content="${canonical}" />`
-    )
-    .replace(
-      /<meta\s+name="twitter:title"\s+content="[^"]*"\s*\/>/,
-      `<meta name="twitter:title" content="${page.title.replaceAll('"', "&quot;")}" />`
-    )
-    .replace(
-      /<meta\s+name="twitter:description"\s+content="[^"]*"\s*\/>/,
-      `<meta name="twitter:description" content="${page.description.replaceAll('"', "&quot;")}" />`
-    )
-    .replace("<!-- ROUTE_SCHEMA -->", routeSchema(page));
-}
-
-for (const page of pages) {
-  const html = applyMeta(sourceHtml, page);
-
-  if (page.route === "/") {
-    fs.writeFileSync(path.join(dist, "index.html"), html);
-    continue;
-  }
-
-  const directory = path.join(dist, page.route);
-  fs.mkdirSync(directory, { recursive: true });
-  fs.writeFileSync(path.join(directory, "index.html"), html);
-}
-
-const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-${pages.map((page) => `  <url>
-    <loc>${new URL(page.route, SITE).toString()}</loc>
-    <changefreq>weekly</changefreq>
-  </url>`).join("\n")}
-</urlset>
-`;
-
-fs.writeFileSync(path.join(dist, "sitemap.xml"), sitemap);
-
-console.log(`Generated ${pages.length} SEO pages and sitemap.xml`);
+const dist=path.resolve("dist"), source=fs.readFileSync(path.join(dist,"index.html"),"utf8");
+function apply(html,p){const url=new URL(p.route,SITE).toString();return html.replace(/<title>[\s\S]*?<\/title>/,`<title>${p.title}</title>`).replace(/<meta name="description" content="[^"]*"\/>/,`<meta name="description" content="${p.description.replaceAll('"','&quot;')}"/>`).replace(/<link rel="canonical" href="[^"]*"\/>/,`<link rel="canonical" href="${url}"/>`).replace(/<meta property="og:title" content="[^"]*"\/>/,`<meta property="og:title" content="${p.title.replaceAll('"','&quot;')}"/>`).replace(/<meta property="og:description" content="[^"]*"\/>/,`<meta property="og:description" content="${p.description.replaceAll('"','&quot;')}"/>`).replace(/<meta property="og:url" content="[^"]*"\/>/,`<meta property="og:url" content="${url}"/>`);}
+for(const p of pages){const html=apply(source,p); if(p.route==="/") fs.writeFileSync(path.join(dist,"index.html"),html); else {const dir=path.join(dist,p.route);fs.mkdirSync(dir,{recursive:true});fs.writeFileSync(path.join(dir,"index.html"),html);}}
+const sitemap=`<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${pages.map(p=>`  <url><loc>${new URL(p.route,SITE).toString()}</loc><changefreq>weekly</changefreq></url>`).join("\n")}\n</urlset>\n`;fs.writeFileSync(path.join(dist,"sitemap.xml"),sitemap);fs.writeFileSync(path.join(dist,"404.html"),source.replace('<meta name="robots" content="index, follow, max-image-preview:large"/>','<meta name="robots" content="noindex, nofollow"/>'));console.log(`Geradas ${pages.length} páginas SEO + sitemap.`);

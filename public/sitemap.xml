@@ -1,10 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://jeitolar.pages.dev/</loc><changefreq>weekly</changefreq></url>
+  <url><loc>https://jeitolar.pages.dev/orcamento/</loc><changefreq>weekly</changefreq></url>
   <url><loc>https://jeitolar.pages.dev/sao-goncalo/</loc><changefreq>weekly</changefreq></url>
   <url><loc>https://jeitolar.pages.dev/niteroi/</loc><changefreq>weekly</changefreq></url>
   <url><loc>https://jeitolar.pages.dev/marica/</loc><changefreq>weekly</changefreq></url>
   <url><loc>https://jeitolar.pages.dev/itaborai/</loc><changefreq>weekly</changefreq></url>
   <url><loc>https://jeitolar.pages.dev/rio-de-janeiro/centro/</loc><changefreq>weekly</changefreq></url>
   <url><loc>https://jeitolar.pages.dev/rio-de-janeiro/zona-sul/</loc><changefreq>weekly</changefreq></url>
+  <url><loc>https://jeitolar.pages.dev/servicos/eletrica/</loc><changefreq>weekly</changefreq></url>
+  <url><loc>https://jeitolar.pages.dev/servicos/hidraulica/</loc><changefreq>weekly</changefreq></url>
+  <url><loc>https://jeitolar.pages.dev/servicos/instalacoes/</loc><changefreq>weekly</changefreq></url>
+  <url><loc>https://jeitolar.pages.dev/servicos/montagem/</loc><changefreq>weekly</changefreq></url>
+  <url><loc>https://jeitolar.pages.dev/servicos/pequenos-reparos/</loc><changefreq>weekly</changefreq></url>
+  <url><loc>https://jeitolar.pages.dev/servicos/jardim-quintal/</loc><changefreq>weekly</changefreq></url>
+  <url><loc>https://jeitolar.pages.dev/servicos/piscina/</loc><changefreq>weekly</changefreq></url>
+  <url><loc>https://jeitolar.pages.dev/instalar/</loc><changefreq>monthly</changefreq></url>
 </urlset>

@@ -1,0 +1,450 @@
+{
+  "visita-reparo-simples": {
+    "sao-goncalo": 60,
+    "niteroi": 60,
+    "marica": 60,
+    "itaborai": 60,
+    "centro-rio": 60,
+    "zona-sul-rio": 60
+  },
+  "fechadura": {
+    "sao-goncalo": 60,
+    "niteroi": 60,
+    "marica": 60,
+    "itaborai": 60,
+    "centro-rio": 60,
+    "zona-sul-rio": 60
+  },
+  "macaneta-dobradica": {
+    "sao-goncalo": 50,
+    "niteroi": 50,
+    "marica": 50,
+    "itaborai": 50,
+    "centro-rio": 50,
+    "zona-sul-rio": 50
+  },
+  "ajuste-porta": {
+    "sao-goncalo": 70,
+    "niteroi": 70,
+    "marica": 70,
+    "itaborai": 70,
+    "centro-rio": 70,
+    "zona-sul-rio": 70
+  },
+  "vedacao-silicone": {
+    "sao-goncalo": 60,
+    "niteroi": 60,
+    "marica": 60,
+    "itaborai": 60,
+    "centro-rio": 60,
+    "zona-sul-rio": 60
+  },
+  "tomada-interruptor": {
+    "sao-goncalo": 50,
+    "niteroi": 50,
+    "marica": 50,
+    "itaborai": 50,
+    "centro-rio": 50,
+    "zona-sul-rio": 50
+  },
+  "luminaria": {
+    "sao-goncalo": 60,
+    "niteroi": 60,
+    "marica": 60,
+    "itaborai": 60,
+    "centro-rio": 60,
+    "zona-sul-rio": 60
+  },
+  "lampada-plafon": {
+    "sao-goncalo": 40,
+    "niteroi": 40,
+    "marica": 40,
+    "itaborai": 40,
+    "centro-rio": 40,
+    "zona-sul-rio": 40
+  },
+  "chuveiro": {
+    "sao-goncalo": 80,
+    "niteroi": 80,
+    "marica": 80,
+    "itaborai": 80,
+    "centro-rio": 80,
+    "zona-sul-rio": 80
+  },
+  "resistencia-chuveiro": {
+    "sao-goncalo": 50,
+    "niteroi": 50,
+    "marica": 50,
+    "itaborai": 50,
+    "centro-rio": 50,
+    "zona-sul-rio": 50
+  },
+  "ventilador": {
+    "sao-goncalo": 110,
+    "niteroi": 110,
+    "marica": 110,
+    "itaborai": 110,
+    "centro-rio": 110,
+    "zona-sul-rio": 110
+  },
+  "disjuntor": {
+    "sao-goncalo": 60,
+    "niteroi": 60,
+    "marica": 60,
+    "itaborai": 60,
+    "centro-rio": 60,
+    "zona-sul-rio": 60
+  },
+  "campainha": {
+    "sao-goncalo": 60,
+    "niteroi": 60,
+    "marica": 60,
+    "itaborai": 60,
+    "centro-rio": 60,
+    "zona-sul-rio": 60
+  },
+  "sensor-presenca": {
+    "sao-goncalo": 60,
+    "niteroi": 60,
+    "marica": 60,
+    "itaborai": 60,
+    "centro-rio": 60,
+    "zona-sul-rio": 60
+  },
+  "refletor": {
+    "sao-goncalo": 70,
+    "niteroi": 70,
+    "marica": 70,
+    "itaborai": 70,
+    "centro-rio": 70,
+    "zona-sul-rio": 70
+  },
+  "torneira-vazamento": {
+    "sao-goncalo": 70,
+    "niteroi": 70,
+    "marica": 70,
+    "itaborai": 70,
+    "centro-rio": 70,
+    "zona-sul-rio": 70
+  },
+  "sifao": {
+    "sao-goncalo": 50,
+    "niteroi": 50,
+    "marica": 50,
+    "itaborai": 50,
+    "centro-rio": 50,
+    "zona-sul-rio": 50
+  },
+  "ducha-higienica": {
+    "sao-goncalo": 70,
+    "niteroi": 70,
+    "marica": 70,
+    "itaborai": 70,
+    "centro-rio": 70,
+    "zona-sul-rio": 70
+  },
+  "filtro-purificador": {
+    "sao-goncalo": 70,
+    "niteroi": 70,
+    "marica": 70,
+    "itaborai": 70,
+    "centro-rio": 70,
+    "zona-sul-rio": 70
+  },
+  "caixa-acoplada": {
+    "sao-goncalo": 80,
+    "niteroi": 80,
+    "marica": 80,
+    "itaborai": 80,
+    "centro-rio": 80,
+    "zona-sul-rio": 80
+  },
+  "vaso-sanitario": {
+    "sao-goncalo": 150,
+    "niteroi": 150,
+    "marica": 150,
+    "itaborai": 150,
+    "centro-rio": 150,
+    "zona-sul-rio": 150
+  },
+  "assento-sanitario": {
+    "sao-goncalo": 40,
+    "niteroi": 40,
+    "marica": 40,
+    "itaborai": 40,
+    "centro-rio": 40,
+    "zona-sul-rio": 40
+  },
+  "desentupimento-simples": {
+    "sao-goncalo": 80,
+    "niteroi": 80,
+    "marica": 80,
+    "itaborai": 80,
+    "centro-rio": 80,
+    "zona-sul-rio": 80
+  },
+  "acabamento-registro": {
+    "sao-goncalo": 50,
+    "niteroi": 50,
+    "marica": 50,
+    "itaborai": 50,
+    "centro-rio": 50,
+    "zona-sul-rio": 50
+  },
+  "suporte-tv": {
+    "sao-goncalo": 90,
+    "niteroi": 90,
+    "marica": 90,
+    "itaborai": 90,
+    "centro-rio": 90,
+    "zona-sul-rio": 90
+  },
+  "prateleira": {
+    "sao-goncalo": 70,
+    "niteroi": 70,
+    "marica": 70,
+    "itaborai": 70,
+    "centro-rio": 70,
+    "zona-sul-rio": 70
+  },
+  "cortina-persiana": {
+    "sao-goncalo": 75,
+    "niteroi": 75,
+    "marica": 75,
+    "itaborai": 75,
+    "centro-rio": 75,
+    "zona-sul-rio": 75
+  },
+  "quadro-espelho": {
+    "sao-goncalo": 50,
+    "niteroi": 50,
+    "marica": 50,
+    "itaborai": 50,
+    "centro-rio": 50,
+    "zona-sul-rio": 50
+  },
+  "acessorios-banheiro": {
+    "sao-goncalo": 60,
+    "niteroi": 60,
+    "marica": 60,
+    "itaborai": 60,
+    "centro-rio": 60,
+    "zona-sul-rio": 60
+  },
+  "varal-teto": {
+    "sao-goncalo": 100,
+    "niteroi": 100,
+    "marica": 100,
+    "itaborai": 100,
+    "centro-rio": 100,
+    "zona-sul-rio": 100
+  },
+  "maquina-lavar": {
+    "sao-goncalo": 70,
+    "niteroi": 70,
+    "marica": 70,
+    "itaborai": 70,
+    "centro-rio": 70,
+    "zona-sul-rio": 70
+  },
+  "coifa-depurador": {
+    "sao-goncalo": 100,
+    "niteroi": 100,
+    "marica": 100,
+    "itaborai": 100,
+    "centro-rio": 100,
+    "zona-sul-rio": 100
+  },
+  "suporte-microondas": {
+    "sao-goncalo": 80,
+    "niteroi": 80,
+    "marica": 80,
+    "itaborai": 80,
+    "centro-rio": 80,
+    "zona-sul-rio": 80
+  },
+  "soundbar": {
+    "sao-goncalo": 70,
+    "niteroi": 70,
+    "marica": 70,
+    "itaborai": 70,
+    "centro-rio": 70,
+    "zona-sul-rio": 70
+  },
+  "armario-parede": {
+    "sao-goncalo": 90,
+    "niteroi": 90,
+    "marica": 90,
+    "itaborai": 90,
+    "centro-rio": 90,
+    "zona-sul-rio": 90
+  },
+  "movel-pequeno": {
+    "sao-goncalo": 60,
+    "niteroi": 60,
+    "marica": 60,
+    "itaborai": 60,
+    "centro-rio": 60,
+    "zona-sul-rio": 60
+  },
+  "comoda-rack": {
+    "sao-goncalo": 90,
+    "niteroi": 90,
+    "marica": 90,
+    "itaborai": 90,
+    "centro-rio": 90,
+    "zona-sul-rio": 90
+  },
+  "guarda-roupa-medio": {
+    "sao-goncalo": 150,
+    "niteroi": 150,
+    "marica": 150,
+    "itaborai": 150,
+    "centro-rio": 150,
+    "zona-sul-rio": 150
+  },
+  "mesa-escrivaninha": {
+    "sao-goncalo": 50,
+    "niteroi": 50,
+    "marica": 50,
+    "itaborai": 50,
+    "centro-rio": 50,
+    "zona-sul-rio": 50
+  },
+  "beliche": {
+    "sao-goncalo": 80,
+    "niteroi": 80,
+    "marica": 80,
+    "itaborai": 80,
+    "centro-rio": 80,
+    "zona-sul-rio": 80
+  },
+  "desmontar-guarda-roupa": {
+    "sao-goncalo": 80,
+    "niteroi": 80,
+    "marica": 80,
+    "itaborai": 80,
+    "centro-rio": 80,
+    "zona-sul-rio": 80
+  },
+  "cama": {
+    "sao-goncalo": 60,
+    "niteroi": 60,
+    "marica": 60,
+    "itaborai": 60,
+    "centro-rio": 60,
+    "zona-sul-rio": 60
+  },
+  "armario-pequeno": {
+    "sao-goncalo": 70,
+    "niteroi": 70,
+    "marica": 70,
+    "itaborai": 70,
+    "centro-rio": 70,
+    "zona-sul-rio": 70
+  },
+  "rocagem-quintal": {
+    "sao-goncalo": 100,
+    "niteroi": 100,
+    "marica": 100,
+    "itaborai": 100,
+    "centro-rio": 100,
+    "zona-sul-rio": 100
+  },
+  "capina-quintal": {
+    "sao-goncalo": 100,
+    "niteroi": 100,
+    "marica": 100,
+    "itaborai": 100,
+    "centro-rio": 100,
+    "zona-sul-rio": 100
+  },
+  "manutencao-jardim": {
+    "sao-goncalo": 100,
+    "niteroi": 100,
+    "marica": 100,
+    "itaborai": 100,
+    "centro-rio": 100,
+    "zona-sul-rio": 100
+  },
+  "plantio-muda": {
+    "sao-goncalo": 50,
+    "niteroi": 50,
+    "marica": 50,
+    "itaborai": 50,
+    "centro-rio": 50,
+    "zona-sul-rio": 50
+  },
+  "transplante-vaso": {
+    "sao-goncalo": 40,
+    "niteroi": 40,
+    "marica": 40,
+    "itaborai": 40,
+    "centro-rio": 40,
+    "zona-sul-rio": 40
+  },
+  "poda-planta-arbusto": {
+    "sao-goncalo": 50,
+    "niteroi": 50,
+    "marica": 50,
+    "itaborai": 50,
+    "centro-rio": 50,
+    "zona-sul-rio": 50
+  },
+  "poda-arvore-pequena": {
+    "sao-goncalo": 80,
+    "niteroi": 80,
+    "marica": 80,
+    "itaborai": 80,
+    "centro-rio": 80,
+    "zona-sul-rio": 80
+  },
+  "limpeza-quintal": {
+    "sao-goncalo": 80,
+    "niteroi": 80,
+    "marica": 80,
+    "itaborai": 80,
+    "centro-rio": 80,
+    "zona-sul-rio": 80
+  },
+  "folhas-residuos": {
+    "sao-goncalo": 60,
+    "niteroi": 60,
+    "marica": 60,
+    "itaborai": 60,
+    "centro-rio": 60,
+    "zona-sul-rio": 60
+  },
+  "limpeza-piscina": {
+    "sao-goncalo": 100,
+    "niteroi": 100,
+    "marica": 100,
+    "itaborai": 100,
+    "centro-rio": 100,
+    "zona-sul-rio": 100
+  },
+  "aspiracao-piscina": {
+    "sao-goncalo": 80,
+    "niteroi": 80,
+    "marica": 80,
+    "itaborai": 80,
+    "centro-rio": 80,
+    "zona-sul-rio": 80
+  },
+  "limpeza-filtro-piscina": {
+    "sao-goncalo": 60,
+    "niteroi": 60,
+    "marica": 60,
+    "itaborai": 60,
+    "centro-rio": 60,
+    "zona-sul-rio": 60
+  },
+  "tratamento-agua-piscina": {
+    "sao-goncalo": 60,
+    "niteroi": 60,
+    "marica": 60,
+    "itaborai": 60,
+    "centro-rio": 60,
+    "zona-sul-rio": 60
+  }
+}

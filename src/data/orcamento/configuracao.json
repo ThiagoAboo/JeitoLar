@@ -1,0 +1,12 @@
+{
+  "moeda": "BRL",
+  "email": "jeitolar@gmail.com",
+  "nome": "JeitoLar",
+  "slogan": "Sua casa, do jeito certo.",
+  "whatsappEnv": "VITE_WHATSAPP_NUMBER",
+  "arredondamentoPrecoAdicional": 5,
+  "aviso": "Valores promocionais de entrada para condições padrão. Materiais, peças, produtos de piscina/jardinagem, descarte de resíduos, estacionamento/pedágio e serviços fora do escopo simples não estão inclusos. O valor final pode variar após avaliação do local.",
+  "mostrarMetodoDeslocamento": false,
+  "mensagemFotos": "Se precisar, enviarei fotos do local e dos itens nesta conversa.",
+  "politicaPrecos": "A mão de obra base é a mesma em todas as regiões. Apenas a estimativa de deslocamento varia conforme a localidade."
+}
