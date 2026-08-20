@@ -1,0 +1,16 @@
+{
+  "name": "JeitoLar",
+  "short_name": "JeitoLar",
+  "description": "Reparos, instalações e manutenção residencial.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#06499b",
+  "icons": [
+    {
+      "src": "/icone-jeitolar.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
