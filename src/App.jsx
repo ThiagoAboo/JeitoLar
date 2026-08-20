@@ -6,6 +6,7 @@ import QuotePage from "./pages/QuotePage";
 import LocationPage from "./pages/LocationPage";
 import ServiceGroupPage from "./pages/ServiceGroupPage";
 import InstallPage from "./pages/InstallPage";
+import BusinessCardPage from "./pages/BusinessCardPage";
 import NotFoundPage from "./pages/NotFoundPage";
 import "./App.css";
 
@@ -14,6 +15,7 @@ export default function App() {
     <Route index element={<HomePage />} />
     <Route path="orcamento/" element={<QuotePage />} />
     <Route path="instalar/" element={<InstallPage />} />
+    <Route path="cartao/" element={<BusinessCardPage />} />
     <Route path="sao-goncalo/" element={<LocationPage locationKey="sao-goncalo" />} />
     <Route path="niteroi/" element={<LocationPage locationKey="niteroi" />} />
     <Route path="marica/" element={<LocationPage locationKey="marica" />} />

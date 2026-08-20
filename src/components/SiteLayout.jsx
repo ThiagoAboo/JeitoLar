@@ -3,8 +3,9 @@ import { Link, Outlet, useLocation, useNavigate } from "react-router-dom";
 import { regioes } from "../lib/pricing";
 import { useRegion } from "../context/RegionContext";
 import ScrollManager from "./ScrollManager";
+import SplashScreen from "./SplashScreen";
 
-export const whatsappNumber = import.meta.env.VITE_WHATSAPP_NUMBER || "5521999999999";
+export const whatsappNumber = import.meta.env.VITE_WHATSAPP_NUMBER || "5521992244753";
 export const buildWhatsAppUrl = (message) => `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
 
 function HomeAnchor({ id, children, onNavigate }) {
@@ -53,7 +54,6 @@ function RegionSelector({ mobile = false, onChangeDone }) {
   }
 
   return <label className={mobile ? "mobile-region-selector" : "header-region-selector"}>
-    <span>{mobile ? "Região do atendimento" : "Região"}</span>
     <select value={regionId} onChange={changeRegion} aria-label="Selecionar região do atendimento">
       <option value="">Escolher região</option>
       {regioes.map((region) => <option value={region.id} key={region.id}>{region.nome}</option>)}
@@ -74,6 +74,7 @@ export default function SiteLayout() {
   const quoteUrl = regionId ? `/orcamento/?regiao=${regionId}` : "/orcamento/";
 
   return <>
+    <SplashScreen />
     <ScrollManager />
     <header className="header">
       <div className="container nav">

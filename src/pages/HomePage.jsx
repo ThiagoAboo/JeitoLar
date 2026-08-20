@@ -3,6 +3,7 @@ import SEO from "../components/SEO";
 import { localPageList } from "../data/localPages";
 import { serviceGroupList } from "../data/serviceGroups";
 import { useRegion } from "../context/RegionContext";
+import PocketSection from "../components/PocketSection";
 
 const gallery = [
   ["/images/galeria/instalacao-tv.webp", "Instalação de suporte de TV em residência", "vertical"],
@@ -41,5 +42,7 @@ export default function HomePage() {
     <section className="section process"><div className="container"><div className="section-title"><span>Como funciona</span><h2>Do orçamento ao WhatsApp em poucos passos</h2></div><div className="steps"><article><b>1</b><h3>Escolha sua localidade</h3><p>Cidade e bairro ajudam a calcular a estimativa e o deslocamento.</p></article><article><b>2</b><h3>Monte sua lista</h3><p>Adicione serviços, quantidades e detalhes relevantes.</p></article><article><b>3</b><h3>Envie pelo WhatsApp</h3><p>A mensagem já leva itens, valores, localização e observações.</p></article></div></div></section>
 
     <section className="cta"><div className="container cta-grid"><div><span>Pronto para resolver?</span><h2>Monte sua estimativa agora.</h2><p>Sem cadastro e sem precisar informar telefone no site.</p></div><Link className="btn light" to={quoteUrl}>Começar orçamento</Link></div></section>
+
+    <PocketSection />
   </main>;
 }

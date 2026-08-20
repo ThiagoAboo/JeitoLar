@@ -120,3 +120,19 @@ public/site.webmanifest
 public/sw.js
 public/pwa/
 ```
+
+## Atualização 2.7
+
+- Seletor do topo sem a palavra “Região”; permanece apenas o dropdown `Escolher região`.
+- Splash visual do app instalado com `logo-jeitolar.png` sobre fundo branco.
+- Cartão de visita 85 x 55 mm em PNG 300 dpi, página própria de impressão e versão web.
+- Nova seção “Carregue o JeitoLar no bolso” na Home.
+- Botões para instalar o app, imprimir o cartão e salvar/compartilhar o cartão no celular.
+
+Consulte `CORRECOES-2.7.md`.
+
+## Atualização 2.8
+
+O cartão de visita agora inclui o carimbo **Faz-Tudo** no canto inferior direito e foi atualizado em todos os pontos de visualização, impressão e compartilhamento/salvamento. O cache da PWA também foi incrementado para evitar que a arte antiga permaneça armazenada no dispositivo.
+
+Consulte `CORRECOES-2.8.md`.

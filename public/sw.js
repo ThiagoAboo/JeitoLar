@@ -1,4 +1,4 @@
-const CACHE_NAME = "jeitolar-v2.6";
+const CACHE_NAME = "jeitolar-v2.8";
 const APP_SHELL = [
   "/",
   "/orcamento/",
@@ -7,7 +7,9 @@ const APP_SHELL = [
   "/icone-jeitolar.png",
   "/pwa/icon-192.png",
   "/pwa/icon-512.png",
-  "/pwa/apple-touch-icon.png"
+  "/pwa/apple-touch-icon.png",
+  "/card/cartao-jeitolar-web.webp?v=2.8",
+  "/card/cartao-jeitolar-85x55mm.png?v=2.8"
 ];
 
 self.addEventListener("install", (event) => {
