@@ -107,9 +107,10 @@ function App() {
               </h1>
 
               <p>
-                Pequenos reparos, instalações e manutenção residencial com
-                atendimento no local, orçamento transparente e serviço feito
-                com cuidado.
+                Serviços de faz-tudo, reparos, instalações e manutenção
+                residencial em São Gonçalo, Niterói, Maricá, Itaboraí,
+                Centro e Zona Sul do Rio de Janeiro. Atendimento no local,
+                orçamento antes do serviço e agendamento pelo WhatsApp.
               </p>
 
               <div className="hero-actions">
@@ -143,10 +144,11 @@ function App() {
           <div className="container">
             <div className="section-title">
               <span>O que fazemos</span>
-              <h2>Serviços para deixar tudo no lugar</h2>
+              <h2>Faz-tudo, reparos e instalações residenciais</h2>
               <p>
-                Desde pequenos consertos até instalações e montagens
-                residenciais.
+                Pequenos reparos elétricos e hidráulicos, montagem de móveis,
+                instalação de suportes, prateleiras, cortinas, luminárias,
+                chuveiros, ventiladores e outros serviços residenciais.
               </p>
             </div>
 
@@ -169,10 +171,11 @@ function App() {
           <div className="container region-grid">
             <div>
               <span className="eyebrow">Atendimento no local</span>
-              <h2>Onde a JeitoLar atende</h2>
+              <h2>Faz-tudo e manutenção residencial no Grande Rio</h2>
               <p>
-                Atendimento residencial mediante agendamento nas principais
-                regiões do Grande Rio.
+                A JeitoLar realiza atendimento residencial em São Gonçalo,
+                Niterói, Maricá, Itaboraí, Centro e Zona Sul do Rio de Janeiro,
+                sempre mediante agendamento.
               </p>
             </div>
 
