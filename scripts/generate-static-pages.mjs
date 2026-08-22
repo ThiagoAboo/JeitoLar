@@ -17,7 +17,8 @@ const pages=[
  {route:"/servicos/montagem/",title:"Montagem de Móveis Residenciais | JeitoLar",description:"Montagem de móveis pequenos, cômodas, racks e guarda-roupas. Selecione a região para consultar os valores de referência."},
  {route:"/servicos/pequenos-reparos/",title:"Pequenos Reparos Residenciais | JeitoLar",description:"Visita para reparos simples, fechaduras, ajustes e vedações. Selecione a região para consultar valores."},
  {route:"/servicos/jardim-quintal/",title:"Jardinagem e Limpeza de Quintal | JeitoLar",description:"Roçagem, capina, limpeza de quintal, jardinagem, plantio e pequenas podas. Selecione a região para consultar valores."},
- {route:"/servicos/piscina/",title:"Limpeza e Manutenção Básica de Piscina | JeitoLar",description:"Limpeza, aspiração, filtro e medição básica de piscina residencial. Selecione a região para consultar valores."}
+ {route:"/servicos/piscina/",title:"Limpeza e Manutenção Básica de Piscina | JeitoLar",description:"Limpeza, aspiração, filtro e medição básica de piscina residencial. Selecione a região para consultar valores."},
+ {route:"/servicos/pacotes/",title:"Pacotes de 4h e 8h para Faz-Tudo | JeitoLar",description:"Pacotes por período para concentrar pequenos reparos, instalações, montagens e fixações elegíveis em uma única visita."}
 ];
 const dist=path.resolve("dist"), source=fs.readFileSync(path.join(dist,"index.html"),"utf8");
 function apply(html,p){

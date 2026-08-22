@@ -30,6 +30,7 @@ export default function App() {
     <Route path="servicos/pequenos-reparos/" element={<ServiceGroupPage groupKey="pequenos-reparos" />} />
     <Route path="servicos/jardim-quintal/" element={<ServiceGroupPage groupKey="jardim-quintal" />} />
     <Route path="servicos/piscina/" element={<ServiceGroupPage groupKey="piscina" />} />
+    <Route path="servicos/pacotes/" element={<ServiceGroupPage groupKey="pacotes" />} />
 
     <Route path="servicos/instalacao-chuveiro/" element={<Navigate to="/servicos/eletrica/" replace />} />
     <Route path="servicos/instalacao-ventilador/" element={<Navigate to="/servicos/eletrica/" replace />} />

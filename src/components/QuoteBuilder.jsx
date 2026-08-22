@@ -32,13 +32,22 @@ export default function QuoteBuilder() {
   useEffect(() => {
     const serviceId = searchParams.get("servico");
     if (serviceId && serviceById[serviceId]) {
-      setItems((prev) => prev.some((i) => i.serviceId === serviceId) ? prev : [...prev, { serviceId, quantity: 1, extras: [] }]);
-      setOpenGroups((prev) => ({ ...prev, [serviceById[serviceId].categoria]: true }));
+      const service = serviceById[serviceId];
+      if (service.tipo === "pacote") {
+        setPackageOverride(service.pacoteId);
+      } else {
+        setItems((prev) => prev.some((i) => i.serviceId === serviceId) ? prev : [...prev, { serviceId, quantity: 1, extras: [] }]);
+      }
+      setOpenGroups((prev) => ({ ...prev, [service.categoria]: true }));
     }
   }, [searchParams]);
 
   useEffect(() => { setNeighborhoodId(""); setNeighborhoodOther(""); setPackageOverride(null); }, [regionId]);
-  useEffect(() => { setPackageOverride(null); }, [items]);
+  useEffect(() => {
+    if (!packageOverride) return;
+    const hasIneligibleService = items.some((item) => serviceById[item.serviceId]?.pacoteElegivel === false);
+    if (hasIneligibleService) setPackageOverride(null);
+  }, [items, packageOverride]);
 
   const region = regioes.find((r) => r.id === regionId);
   const neighborhoods = bairros[regionId] || [];
@@ -64,9 +73,23 @@ export default function QuoteBuilder() {
   const packageSelected = pacotes.find((p) => p.id === packageOverride);
   const billedServices = packageSelected ? Number(packageSelected.preco) : servicesTotal;
   const total = billedServices + travel.fee;
+  const selectionCount = items.length + (packageSelected ? 1 : 0);
+  const estimatedTimeLabel = packageSelected ? `até ${packageSelected.horas}h` : (items.length ? durationLabel(timeMin, timeMax) : "—");
 
-  const selected = (id) => items.find((i) => i.serviceId === id);
-  function toggleService(id) { setValidationField(""); setItems((prev) => prev.some((i) => i.serviceId === id) ? prev.filter((i) => i.serviceId !== id) : [...prev, { serviceId:id, quantity:1, extras:[] }]); }
+  const selected = (id) => {
+    const service = serviceById[id];
+    if (service?.tipo === "pacote") return service.pacoteId === packageOverride ? { serviceId:id, quantity:1, extras:[] } : null;
+    return items.find((i) => i.serviceId === id);
+  };
+  function toggleService(id) {
+    setValidationField("");
+    const service = serviceById[id];
+    if (service?.tipo === "pacote") {
+      setPackageOverride((current) => current === service.pacoteId ? null : service.pacoteId);
+      return;
+    }
+    setItems((prev) => prev.some((i) => i.serviceId === id) ? prev.filter((i) => i.serviceId !== id) : [...prev, { serviceId:id, quantity:1, extras:[] }]);
+  }
   function updateQty(id, delta) { setItems((prev) => prev.map((i) => i.serviceId !== id ? i : { ...i, quantity: Math.max(1, Math.min(serviceById[id].qtdMax || 1, i.quantity + delta)) })); }
   function toggleExtra(id, extraId) { setItems((prev) => prev.map((i) => i.serviceId !== id ? i : { ...i, extras: i.extras.includes(extraId) ? i.extras.filter((x) => x !== extraId) : [...i.extras, extraId] })); }
   function toggleGroup(category) { setOpenGroups((prev) => ({ ...prev, [category]: !prev[category] })); }
@@ -74,7 +97,7 @@ export default function QuoteBuilder() {
   const neighborhood = neighborhoods.find((b) => b.id === neighborhoodId);
   const locationText = [region?.nome, neighborhoodId === "outro" ? neighborhoodOther : neighborhood?.nome].filter(Boolean).join(" - ");
   const hasNeighborhood = Boolean(neighborhoodId && (neighborhoodId !== "outro" || neighborhoodOther.trim()));
-  const canSend = Boolean(regionId && items.length && name.trim() && hasNeighborhood);
+  const canSend = Boolean(regionId && selectionCount && name.trim() && hasNeighborhood);
   const summaryLimit = 4;
   const summaryDetails = showAllSummary ? details : details.slice(0, summaryLimit);
 
@@ -104,7 +127,7 @@ export default function QuoteBuilder() {
       return false;
     }
 
-    if (!items.length) {
+    if (!selectionCount) {
       setValidationField("services");
       requestAnimationFrame(() => {
         servicesStepRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
@@ -141,7 +164,7 @@ export default function QuoteBuilder() {
       lines.push(`Endereço/referência: ${address.trim()}`);
     }
 
-    lines.push("", "*SERVIÇOS SELECIONADOS*");
+    lines.push("", "*SERVIÇOS / PACOTES SELECIONADOS*");
 
     details.forEach((item, index) => {
       lines.push(`${index + 1}. ${item.service.nome}`);
@@ -154,7 +177,8 @@ export default function QuoteBuilder() {
     });
 
     if (packageSelected) {
-      lines.push("", `Pacote aplicado: ${packageSelected.nome} | ${brl(packageSelected.preco)}`);
+      lines.push(`${details.length + 1}. ${packageSelected.nome}`);
+      lines.push(`   ${packageSelected.horas}h de mão de obra | ${brl(packageSelected.preco)}`);
     }
 
     lines.push(
@@ -163,7 +187,7 @@ export default function QuoteBuilder() {
       `Serviços: ${brl(billedServices)}`,
       `Deslocamento: ${brl(travel.fee)}`,
       `Total estimado: *${brl(total)}*`,
-      `Tempo previsto: ${durationLabel(timeMin, timeMax)}`
+      `Tempo previsto: ${estimatedTimeLabel}`
     );
 
     if (notes.trim()) {
@@ -211,11 +235,11 @@ export default function QuoteBuilder() {
             </button>
 
             {expanded && <div className="service-list service-list-collapsible">
-              {list.map((service)=>{ const item=selected(service.id); const price=regionId?getBasePrice(service.id,regionId):0; return <article className={`quote-service ${item?"active":""}`} key={service.id}>
-                <button type="button" className="service-toggle" onClick={()=>toggleService(service.id)}><span className="checkmark">{item?"✓":"+"}</span><span className="service-copy"><strong>{service.nome}</strong><small>{service.descricao}</small></span><span className="service-price">{regionId ? `a partir de ${brl(price)}` : "Selecione a região"}</span></button>
-                {item && <div className="service-options">{(service.qtdMax || 1) > 1 && <div className="qty"><span>Quantidade</span><button type="button" onClick={()=>updateQty(service.id,-1)}>−</button><b>{item.quantity}</b><button type="button" onClick={()=>updateQty(service.id,1)}>+</button></div>}
-                  {(service.extras||[]).length>0 && <div className="extras"><span>Detalhes</span>{service.extras.map((extra)=><label key={extra.id}><input type="checkbox" checked={item.extras.includes(extra.id)} onChange={()=>toggleExtra(service.id,extra.id)} /> {extra.nome} <small>+ {brl(extra.valor)}{extra.porUnidade?" / un.":""}</small></label>)}</div>}
-                  <div className="line-total">Subtotal deste serviço: <strong>{brl(serviceLineTotal(service.id,regionId,item.quantity,item.extras).total)}</strong></div>
+              {list.map((service)=>{ const item=selected(service.id); const price=regionId?getBasePrice(service.id,regionId):0; const isPackage=service.tipo === "pacote"; return <article className={`quote-service ${item?"active":""}`} key={service.id}>
+                <button type="button" className="service-toggle" onClick={()=>toggleService(service.id)}><span className="checkmark">{item?"✓":"+"}</span><span className="service-copy"><strong>{service.nome}</strong><small>{service.descricao}</small></span><span className="service-price">{regionId ? (isPackage ? brl(price) : `a partir de ${brl(price)}`) : "Selecione a região"}</span></button>
+                {item && <div className="service-options">{!isPackage && (service.qtdMax || 1) > 1 && <div className="qty"><span>Quantidade</span><button type="button" onClick={()=>updateQty(service.id,-1)}>−</button><b>{item.quantity}</b><button type="button" onClick={()=>updateQty(service.id,1)}>+</button></div>}
+                  {!isPackage && (service.extras||[]).length>0 && <div className="extras"><span>Detalhes</span>{service.extras.map((extra)=><label key={extra.id}><input type="checkbox" checked={item.extras.includes(extra.id)} onChange={()=>toggleExtra(service.id,extra.id)} /> {extra.nome} <small>+ {brl(extra.valor)}{extra.porUnidade?" / un.":""}</small></label>)}</div>}
+                  <div className="line-total">{isPackage ? "Valor do pacote" : "Subtotal deste serviço"}: <strong>{brl(isPackage ? price : serviceLineTotal(service.id,regionId,item.quantity,item.extras).total)}</strong></div>
                 </div>}
               </article>})}
             </div>}
@@ -223,8 +247,8 @@ export default function QuoteBuilder() {
         })}
       </section>
 
-      {recommendation && !packageSelected && <section className="package-recommend"><span>💡 Pode compensar</span><div><h3>{recommendation.nome}</h3><p>{recommendation.descricao}</p><strong>Economia estimada: {brl(recommendation.economia)}</strong></div><button type="button" className="btn secondary" onClick={()=>setPackageOverride(recommendation.id)}>Usar pacote</button></section>}
-      {packageSelected && <section className="package-applied"><div><b>Pacote aplicado: {packageSelected.nome}</b><p>{packageSelected.descricao}</p></div><button type="button" onClick={()=>setPackageOverride(null)}>Voltar aos valores avulsos</button></section>}
+      {recommendation && !packageSelected && <section className="package-recommend"><span>💡 Pode compensar</span><div><h3>{recommendation.nome} — {brl(recommendation.preco)}</h3><p>{recommendation.descricao}</p><small>{recommendation.horas}h • {brl(Number(recommendation.preco) / Number(recommendation.horas))}/hora</small><strong>Economia estimada: {brl(recommendation.economia)}</strong></div><button type="button" className="btn secondary" onClick={()=>setPackageOverride(recommendation.id)}>Usar pacote</button></section>}
+      {packageSelected && <section className="package-applied"><div><b>Pacote aplicado: {packageSelected.nome} — {brl(packageSelected.preco)}</b><p>{packageSelected.descricao}</p><small>{packageSelected.horas}h • {brl(Number(packageSelected.preco) / Number(packageSelected.horas))}/hora</small></div><button type="button" onClick={()=>setPackageOverride(null)}>Voltar aos valores avulsos</button></section>}
 
       <section className="quote-step"><div className="step-number">3</div><div className="step-heading"><h2>Quem está solicitando?</h2><p>Seu telefone não é necessário aqui: o pedido será enviado pelo seu próprio WhatsApp.</p></div>
         <label className="full-label">Seu nome<input ref={nameRef} className={validationField === "name" ? "field-error" : ""} value={name} onChange={(e)=>{setName(e.target.value); setValidationField("");}} placeholder="Como podemos chamar você?" /></label>
@@ -232,11 +256,11 @@ export default function QuoteBuilder() {
       </section>
     </div>
 
-    <aside className="quote-summary"><div className="summary-sticky"><div className="summary-heading-row"><div><span className="eyebrow">Sua estimativa</span><h2>{items.length ? `${items.length} serviço${items.length>1?"s":""}` : "Monte seu orçamento"}</h2></div><button type="button" className="summary-send-top" onClick={sendBudget}>Enviar orçamento</button></div>
+    <aside className="quote-summary"><div className="summary-sticky"><div className="summary-heading-row"><div><span className="eyebrow">Sua estimativa</span><h2>{selectionCount ? `${selectionCount} item${selectionCount>1?"s":""}` : "Monte seu orçamento"}</h2></div><button type="button" className="summary-send-top" onClick={sendBudget}>Enviar orçamento</button></div>
       <div className="summary-lines">{summaryDetails.map((item)=><div className="summary-item" key={item.serviceId}><div><strong>{item.quantity}x {item.service.nome}</strong>{item.quantity>1 && <small>1ª unidade {brl(item.price.unitBase)} • adicionais {brl(item.price.additionalUnit)}</small>}</div><b>{brl(item.price.total)}</b></div>)}</div>
       {details.length > summaryLimit && <button type="button" className="summary-toggle" onClick={()=>setShowAllSummary((value)=>!value)}>{showAllSummary ? "Mostrar menos" : `Ver mais ${details.length-summaryLimit} serviço${details.length-summaryLimit>1?"s":""}`}</button>}
       {packageSelected && <div className="summary-package"><span>{packageSelected.nome}</span><b>{brl(packageSelected.preco)}</b></div>}
-      <div className="summary-totals"><div><span>Serviços</span><b>{brl(billedServices)}</b></div><div><span>Deslocamento</span><b>{regionId ? brl(travel.fee) : "—"}</b></div><div><span>Tempo estimado</span><b>{items.length?durationLabel(timeMin,timeMax):"—"}</b></div><div className="grand"><span>Estimativa</span><b>{brl(total)}</b></div></div>
+      <div className="summary-totals"><div><span>Serviços</span><b>{brl(billedServices)}</b></div><div><span>Deslocamento</span><b>{regionId ? brl(travel.fee) : "—"}</b></div><div><span>Tempo estimado</span><b>{estimatedTimeLabel}</b></div><div className="grand"><span>Estimativa</span><b>{brl(total)}</b></div></div>
       <p className="quote-disclaimer">{configuracao.aviso}</p>
       <button type="button" className={`btn whatsapp ${canSend?"":"needs-info"}`} onClick={sendBudget}>Enviar orçamento pelo WhatsApp</button>
       {!canSend && <small className="summary-hint">Preencha região, bairro, ao menos um serviço e seu nome.</small>}

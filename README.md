@@ -136,3 +136,7 @@ Consulte `CORRECOES-2.7.md`.
 O cartão de visita agora inclui o carimbo **Faz-Tudo** no canto inferior direito e foi atualizado em todos os pontos de visualização, impressão e compartilhamento/salvamento. O cache da PWA também foi incrementado para evitar que a arte antiga permaneça armazenada no dispositivo.
 
 Consulte `CORRECOES-2.8.md`.
+
+
+## JeitoLar 3.0
+- Pacotes de 4h e 8h disponíveis no grupo **Pacotes** dentro da lista de serviços do orçamento.

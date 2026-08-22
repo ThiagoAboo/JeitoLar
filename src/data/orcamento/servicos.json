@@ -748,5 +748,33 @@
     "qtdMax": 1,
     "adicionalPercentual": 1.0,
     "pacoteElegivel": false
+  },
+  {
+    "id": "pacote-4h",
+    "nome": "Pacote 4 horas",
+    "categoria": "Pacotes",
+    "descricao": "Até 4 horas de mão de obra para reunir pequenos reparos, instalações, montagens e fixações elegíveis no mesmo atendimento.",
+    "duracaoMin": 240,
+    "duracaoMax": 240,
+    "repetivel": false,
+    "qtdMax": 1,
+    "adicionalPercentual": 1.0,
+    "pacoteElegivel": false,
+    "tipo": "pacote",
+    "pacoteId": "meio-periodo"
+  },
+  {
+    "id": "pacote-8h",
+    "nome": "Pacote 8 horas",
+    "categoria": "Pacotes",
+    "descricao": "Até 8 horas de mão de obra para concentrar uma lista maior de pequenos serviços elegíveis no mesmo atendimento.",
+    "duracaoMin": 480,
+    "duracaoMax": 480,
+    "repetivel": false,
+    "qtdMax": 1,
+    "adicionalPercentual": 1.0,
+    "pacoteElegivel": false,
+    "tipo": "pacote",
+    "pacoteId": "diaria-completa"
   }
 ]

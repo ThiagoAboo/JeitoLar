@@ -54,7 +54,16 @@ export const serviceGroups = {
     heading: "Limpeza e cuidados básicos de piscina",
     resumo: "Limpeza básica, aspiração, cestos/filtro e medição da água em piscinas residenciais, com produtos fornecidos pelo cliente.",
     serviceIds: ["limpeza-piscina","aspiracao-piscina","limpeza-filtro-piscina","tratamento-agua-piscina"]
-  }
+  },
+  pacotes: {
+    path: "/servicos/pacotes/", nome: "Pacotes", eyebrow: "Pacotes por período",
+    title: "Pacotes de 4h e 8h para Faz-Tudo | JeitoLar",
+    description: "Pacotes de 4 e 8 horas de mão de obra para reunir pequenos reparos, instalações, montagens e fixações elegíveis no mesmo atendimento.",
+    heading: "Pacotes de diária",
+    resumo: "Escolha 4 ou 8 horas de mão de obra para concentrar vários pequenos serviços elegíveis em uma única visita.",
+    serviceIds: ["pacote-4h","pacote-8h"]
+  },
+
 };
 
 export const serviceGroupList = Object.entries(serviceGroups).map(([id, group]) => ({ id, ...group }));

@@ -446,5 +446,21 @@
     "itaborai": 60,
     "centro-rio": 60,
     "zona-sul-rio": 60
+  },
+  "pacote-4h": {
+    "sao-goncalo": 240,
+    "niteroi": 240,
+    "marica": 240,
+    "itaborai": 240,
+    "centro-rio": 240,
+    "zona-sul-rio": 240
+  },
+  "pacote-8h": {
+    "sao-goncalo": 440,
+    "niteroi": 440,
+    "marica": 440,
+    "itaborai": 440,
+    "centro-rio": 440,
+    "zona-sul-rio": 440
   }
 }

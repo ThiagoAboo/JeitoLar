@@ -1,18 +1,18 @@
 [
   {
     "id": "meio-periodo",
-    "nome": "Pacote Meio Período",
+    "nome": "Pacote 4 horas",
     "horas": 4,
-    "preco": 260,
-    "descricao": "Até 4 horas para reunir pequenos reparos, instalações e fixações elegíveis na mesma visita.",
+    "preco": 240,
+    "descricao": "Até 4 horas de mão de obra para reunir pequenos reparos, instalações, montagens e fixações elegíveis no mesmo atendimento.",
     "minutosMinimos": 180
   },
   {
     "id": "diaria-completa",
-    "nome": "Pacote Diária Completa",
+    "nome": "Pacote 8 horas",
     "horas": 8,
-    "preco": 450,
-    "descricao": "Até 8 horas para concentrar uma lista maior de pequenos serviços elegíveis no mesmo atendimento.",
+    "preco": 440,
+    "descricao": "Até 8 horas de mão de obra para concentrar uma lista maior de pequenos serviços elegíveis no mesmo atendimento.",
     "minutosMinimos": 330
   }
 ]
