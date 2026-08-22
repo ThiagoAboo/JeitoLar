@@ -34,8 +34,10 @@ export default function QuoteBuilder() {
     if (serviceId && serviceById[serviceId]) {
       const service = serviceById[serviceId];
       if (service.tipo === "pacote") {
+        setItems([]);
         setPackageOverride(service.pacoteId);
       } else {
+        setPackageOverride(null);
         setItems((prev) => prev.some((i) => i.serviceId === serviceId) ? prev : [...prev, { serviceId, quantity: 1, extras: [] }]);
       }
       setOpenGroups((prev) => ({ ...prev, [service.categoria]: true }));
@@ -84,11 +86,26 @@ export default function QuoteBuilder() {
   function toggleService(id) {
     setValidationField("");
     const service = serviceById[id];
+
     if (service?.tipo === "pacote") {
-      setPackageOverride((current) => current === service.pacoteId ? null : service.pacoteId);
+      const isCurrentPackage = packageOverride === service.pacoteId;
+
+      if (isCurrentPackage) {
+        setPackageOverride(null);
+      } else {
+        // Pacote e serviços avulsos são modos mutuamente exclusivos.
+        // Ao escolher um pacote, limpamos qualquer serviço avulso já selecionado.
+        setItems([]);
+        setPackageOverride(service.pacoteId);
+      }
       return;
     }
-    setItems((prev) => prev.some((i) => i.serviceId === id) ? prev.filter((i) => i.serviceId !== id) : [...prev, { serviceId:id, quantity:1, extras:[] }]);
+
+    // Ao escolher um serviço avulso, qualquer pacote selecionado é removido.
+    setPackageOverride(null);
+    setItems((prev) => prev.some((i) => i.serviceId === id)
+      ? prev.filter((i) => i.serviceId !== id)
+      : [...prev, { serviceId:id, quantity:1, extras:[] }]);
   }
   function updateQty(id, delta) { setItems((prev) => prev.map((i) => i.serviceId !== id ? i : { ...i, quantity: Math.max(1, Math.min(serviceById[id].qtdMax || 1, i.quantity + delta)) })); }
   function toggleExtra(id, extraId) { setItems((prev) => prev.map((i) => i.serviceId !== id ? i : { ...i, extras: i.extras.includes(extraId) ? i.extras.filter((x) => x !== extraId) : [...i.extras, extraId] })); }
