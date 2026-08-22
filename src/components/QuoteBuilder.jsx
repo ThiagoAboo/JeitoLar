@@ -44,7 +44,7 @@ export default function QuoteBuilder() {
     }
   }, [searchParams]);
 
-  useEffect(() => { setNeighborhoodId(""); setNeighborhoodOther(""); setPackageOverride(null); }, [regionId]);
+  useEffect(() => { setNeighborhoodId(""); setNeighborhoodOther(""); }, [regionId]);
   useEffect(() => {
     if (!packageOverride) return;
     const hasIneligibleService = items.some((item) => serviceById[item.serviceId]?.pacoteElegivel === false);
