@@ -110,7 +110,9 @@
       {
         "id": "fiacao-nova",
         "nome": "Precisa adequar fiação/disjuntor",
-        "valor": 80
+        "valor": 80,
+        "duracaoMin": 30,
+        "duracaoMax": 60
       }
     ]
   },
@@ -141,7 +143,9 @@
       {
         "id": "controle-remoto",
         "nome": "Modelo com controle remoto",
-        "valor": 25
+        "valor": 25,
+        "duracaoMin": 10,
+        "duracaoMax": 20
       }
     ]
   },
@@ -208,7 +212,9 @@
       {
         "id": "gourmet",
         "nome": "Torneira gourmet/misturador",
-        "valor": 25
+        "valor": 25,
+        "duracaoMin": 10,
+        "duracaoMax": 20
       }
     ]
   },
@@ -275,7 +281,9 @@
       {
         "id": "retirada",
         "nome": "Retirada do vaso antigo",
-        "valor": 50
+        "valor": 50,
+        "duracaoMin": 20,
+        "duracaoMax": 40
       }
     ]
   },
@@ -330,22 +338,30 @@
       {
         "id": "articulado",
         "nome": "Suporte articulado",
-        "valor": 30
+        "valor": 30,
+        "duracaoMin": 10,
+        "duracaoMax": 20
       },
       {
         "id": "tv-grande",
         "nome": "TV acima de 65 polegadas",
-        "valor": 30
+        "valor": 30,
+        "duracaoMin": 10,
+        "duracaoMax": 15
       },
       {
         "id": "porcelanato",
         "nome": "Parede revestida/porcelanato",
-        "valor": 40
+        "valor": 40,
+        "duracaoMin": 15,
+        "duracaoMax": 30
       },
       {
         "id": "painel",
         "nome": "Fixação em painel",
-        "valor": 25
+        "valor": 25,
+        "duracaoMin": 10,
+        "duracaoMax": 20
       }
     ]
   },
@@ -365,7 +381,9 @@
         "id": "porcelanato",
         "nome": "Parede revestida/porcelanato",
         "valor": 20,
-        "porUnidade": true
+        "porUnidade": true,
+        "duracaoMin": 10,
+        "duracaoMax": 15
       }
     ]
   },
@@ -397,7 +415,9 @@
         "id": "pesado",
         "nome": "Peça pesada ou com fixação especial",
         "valor": 30,
-        "porUnidade": true
+        "porUnidade": true,
+        "duracaoMin": 10,
+        "duracaoMax": 20
       }
     ]
   },
@@ -704,12 +724,16 @@
       {
         "id": "media",
         "nome": "Piscina entre 21 e 40 m²",
-        "valor": 50
+        "valor": 50,
+        "duracaoMin": 30,
+        "duracaoMax": 45
       },
       {
         "id": "agua-verde",
         "nome": "Água verde / tratamento mais demorado",
-        "valor": 80
+        "valor": 80,
+        "duracaoMin": 60,
+        "duracaoMax": 90
       }
     ]
   },

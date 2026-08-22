@@ -31,6 +31,27 @@ export function serviceLineTotal(serviceId, regionId, quantity = 1, selectedExtr
   return { total, unitBase, additionalUnit, extrasTotal };
 }
 
+
+export function serviceLineDuration(serviceId, quantity = 1, selectedExtras = []) {
+  const service = serviceById[serviceId];
+  if (!service) return { min: 0, max: 0, extrasMin: 0, extrasMax: 0 };
+  const qty = Math.max(1, Math.min(Number(quantity || 1), Number(service.qtdMax || 1)));
+  let min = Number(service.duracaoMin || 0) * qty;
+  let max = Number(service.duracaoMax || 0) * qty;
+  let extrasMin = 0;
+  let extrasMax = 0;
+  for (const extraId of selectedExtras || []) {
+    const extra = (service.extras || []).find((item) => item.id === extraId);
+    if (!extra) continue;
+    const multiplier = extra.porUnidade ? qty : 1;
+    extrasMin += Number(extra.duracaoMin || 0) * multiplier;
+    extrasMax += Number(extra.duracaoMax || extra.duracaoMin || 0) * multiplier;
+  }
+  min += extrasMin;
+  max += extrasMax;
+  return { min, max, extrasMin, extrasMax };
+}
+
 export function travelFee(regionId, neighborhoodId) {
   const rule = deslocamento.regioes?.[regionId];
   if (!rule) return { fee: 0, method: "confirmar", details: "Deslocamento a confirmar" };
@@ -58,8 +79,9 @@ export function packageRecommendation(items, regionId) {
     const service = serviceById[item.serviceId];
     if (!service) continue;
     const qty = Number(item.quantity || 1);
-    timeMin += service.duracaoMin * qty;
-    timeMax += service.duracaoMax * qty;
+    const duration = serviceLineDuration(item.serviceId, qty, item.extras);
+    timeMin += duration.min;
+    timeMax += duration.max;
     serviceTotal += serviceLineTotal(item.serviceId, regionId, qty, item.extras).total;
     if (service.pacoteElegivel === false) hasHeavy = true;
   }

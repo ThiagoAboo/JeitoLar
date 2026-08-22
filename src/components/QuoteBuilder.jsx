@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import { useSearchParams } from "react-router-dom";
 import { brl, durationLabel } from "../lib/format";
-import { bairros, configuracao, pacotes, regioes, serviceById, servicos, serviceLineTotal, travelFee, packageRecommendation, getBasePrice } from "../lib/pricing";
+import { bairros, configuracao, pacotes, regioes, serviceById, servicos, serviceLineTotal, travelFee, packageRecommendation, getBasePrice, serviceLineDuration } from "../lib/pricing";
 import { buildWhatsAppUrl } from "./SiteLayout";
 import { useRegion } from "../context/RegionContext";
 
@@ -69,8 +69,8 @@ export default function QuoteBuilder() {
 
   const servicesTotal = details.reduce((sum, item) => sum + item.price.total, 0);
   const travel = regionId ? travelFee(regionId, neighborhoodId) : { fee:0 };
-  const timeMin = details.reduce((sum, item) => sum + item.service.duracaoMin * item.quantity, 0);
-  const timeMax = details.reduce((sum, item) => sum + item.service.duracaoMax * item.quantity, 0);
+  const timeMin = details.reduce((sum, item) => sum + serviceLineDuration(item.serviceId, item.quantity, item.extras).min, 0);
+  const timeMax = details.reduce((sum, item) => sum + serviceLineDuration(item.serviceId, item.quantity, item.extras).max, 0);
   const recommendation = packageRecommendation(items, regionId);
   const packageSelected = pacotes.find((p) => p.id === packageOverride);
   const billedServices = packageSelected ? Number(packageSelected.preco) : servicesTotal;
@@ -274,7 +274,7 @@ export default function QuoteBuilder() {
     </div>
 
     <aside className="quote-summary"><div className="summary-sticky"><div className="summary-heading-row"><div><span className="eyebrow">Sua estimativa</span><h2>{selectionCount ? `${selectionCount} item${selectionCount>1?"s":""}` : "Monte seu orçamento"}</h2></div><button type="button" className="summary-send-top" onClick={sendBudget}>Enviar orçamento</button></div>
-      <div className="summary-lines">{summaryDetails.map((item)=><div className="summary-item" key={item.serviceId}><div><strong>{item.quantity}x {item.service.nome}</strong>{item.quantity>1 && <small>1ª unidade {brl(item.price.unitBase)} • adicionais {brl(item.price.additionalUnit)}</small>}</div><b>{brl(item.price.total)}</b></div>)}</div>
+      <div className="summary-lines">{summaryDetails.map((item)=><div className="summary-item" key={item.serviceId}><div><strong>{item.quantity}x {item.service.nome}</strong>{item.extras?.length > 0 && <small className="summary-extras">{item.extras.map((extraId)=>item.service.extras?.find((extra)=>extra.id===extraId)?.nome).filter(Boolean).join(" • ")}</small>}{item.quantity>1 && <small>1ª unidade {brl(item.price.unitBase)} • adicionais {brl(item.price.additionalUnit)}</small>}</div><b>{brl(item.price.total)}</b></div>)}</div>
       {details.length > summaryLimit && <button type="button" className="summary-toggle" onClick={()=>setShowAllSummary((value)=>!value)}>{showAllSummary ? "Mostrar menos" : `Ver mais ${details.length-summaryLimit} serviço${details.length-summaryLimit>1?"s":""}`}</button>}
       {packageSelected && <div className="summary-package"><span>{packageSelected.nome}</span><b>{brl(packageSelected.preco)}</b></div>}
       <div className="summary-totals"><div><span>Serviços</span><b>{brl(billedServices)}</b></div><div><span>Deslocamento</span><b>{regionId ? brl(travel.fee) : "—"}</b></div><div><span>Tempo estimado</span><b>{estimatedTimeLabel}</b></div><div className="grand"><span>Estimativa</span><b>{brl(total)}</b></div></div>
