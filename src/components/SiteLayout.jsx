@@ -85,6 +85,7 @@ export default function SiteLayout() {
 
         <nav className="desktop-nav" aria-label="Navegação principal">
           <HomeAnchor id="servicos">Serviços</HomeAnchor>
+          <HomeAnchor id="pacotes">Pacotes</HomeAnchor>
           <HomeAnchor id="regioes">Regiões</HomeAnchor>
           <HomeAnchor id="galeria">Galeria</HomeAnchor>
           <Link to={quoteUrl}>Orçamento</Link>
@@ -107,6 +108,7 @@ export default function SiteLayout() {
         <nav id="mobile-navigation" className={`mobile-nav ${mobileOpen ? "open" : ""}`} aria-label="Navegação mobile">
           <RegionSelector mobile />
           <HomeAnchor id="servicos" onNavigate={closeMobile}>Serviços</HomeAnchor>
+          <HomeAnchor id="pacotes" onNavigate={closeMobile}>Pacotes</HomeAnchor>
           <HomeAnchor id="regioes" onNavigate={closeMobile}>Regiões</HomeAnchor>
           <HomeAnchor id="galeria" onNavigate={closeMobile}>Galeria</HomeAnchor>
           <Link to={quoteUrl} onClick={closeMobile}>Orçamento</Link>

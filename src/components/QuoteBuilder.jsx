@@ -223,8 +223,8 @@ export default function QuoteBuilder() {
         })}
       </section>
 
-      {recommendation && !packageSelected && <section className="package-recommend"><span>💡 Pode compensar</span><div><h3>{recommendation.nome}</h3><p>{recommendation.descricao}</p><strong>Economia estimada: {brl(recommendation.economia)}</strong></div><button type="button" className="btn secondary" onClick={()=>setPackageOverride(recommendation.id)}>Usar pacote</button></section>}
-      {packageSelected && <section className="package-applied"><div><b>Pacote aplicado: {packageSelected.nome}</b><p>{packageSelected.descricao}</p></div><button type="button" onClick={()=>setPackageOverride(null)}>Voltar aos valores avulsos</button></section>}
+      {recommendation && !packageSelected && <section className="package-recommend"><span>💡 Pode compensar</span><div><h3>{recommendation.nome} — {brl(recommendation.preco)}</h3><p>{recommendation.descricao}</p><small>{recommendation.horas}h • {brl(Number(recommendation.preco) / Number(recommendation.horas))}/hora</small><strong>Economia estimada: {brl(recommendation.economia)}</strong></div><button type="button" className="btn secondary" onClick={()=>setPackageOverride(recommendation.id)}>Usar pacote</button></section>}
+      {packageSelected && <section className="package-applied"><div><b>Pacote aplicado: {packageSelected.nome} — {brl(packageSelected.preco)}</b><p>{packageSelected.descricao}</p><small>{packageSelected.horas}h • {brl(Number(packageSelected.preco) / Number(packageSelected.horas))}/hora</small></div><button type="button" onClick={()=>setPackageOverride(null)}>Voltar aos valores avulsos</button></section>}
 
       <section className="quote-step"><div className="step-number">3</div><div className="step-heading"><h2>Quem está solicitando?</h2><p>Seu telefone não é necessário aqui: o pedido será enviado pelo seu próprio WhatsApp.</p></div>
         <label className="full-label">Seu nome<input ref={nameRef} className={validationField === "name" ? "field-error" : ""} value={name} onChange={(e)=>{setName(e.target.value); setValidationField("");}} placeholder="Como podemos chamar você?" /></label>
