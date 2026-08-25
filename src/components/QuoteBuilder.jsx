@@ -68,7 +68,6 @@ export default function QuoteBuilder() {
     setNeighborhoodOther("");
   }, [regionId]);
 
-  useEffect(() => { setNeighborhoodId(""); setNeighborhoodOther(""); setPackageOverride(null); }, [regionId]);
   useEffect(() => {
     if (!packageOverride) return;
     const hasIneligibleService = items.some(
