@@ -1,0 +1,31 @@
+import fs from "node:fs"; import path from "node:path";
+const SITE="https://jeitolar.pages.dev";
+const pages=[
+ {route:"/",title:"JeitoLar | Faz-Tudo e Reparos Residenciais no Grande Rio",description:"JeitoLar oferece faz-tudo, reparos, instalações e manutenção residencial no Grande Rio. Monte sua estimativa online e envie pelo WhatsApp."},
+ {route:"/orcamento/",title:"Orçamento Online | JeitoLar",description:"Monte uma estimativa de serviços residenciais, deslocamento e quantidades e envie o pedido completo pelo WhatsApp."},
+ {route:"/instalar/",title:"Instalar JeitoLar no celular | JeitoLar",description:"Instale a JeitoLar como aplicativo no Android ou iPhone e acesse serviços e orçamento direto da tela inicial."},
+ {route:"/cartao/",title:"Cartão de visita JeitoLar",description:"Cartão de visita da JeitoLar para impressão ou salvamento no celular.",noindex:true},
+ {route:"/sao-goncalo/",title:"Faz-Tudo em São Gonçalo | Reparos Residenciais | JeitoLar",description:"Faz-tudo em São Gonçalo para pequenos reparos, instalações, montagem e manutenção residencial. Monte sua estimativa online com a JeitoLar."},
+ {route:"/niteroi/",title:"Faz-Tudo em Niterói | Reparos e Instalações | JeitoLar",description:"Faz-tudo em Niterói para instalações, pequenos reparos, montagem de móveis e manutenção residencial. Calcule uma estimativa online."},
+ {route:"/marica/",title:"Faz-Tudo em Maricá | Manutenção Residencial | JeitoLar",description:"Serviço de faz-tudo em Maricá para reparos, instalações, montagem, elétrica e hidráulica leve. Monte seu orçamento estimado."},
+ {route:"/itaborai/",title:"Faz-Tudo em Itaboraí | Reparos e Manutenção | JeitoLar",description:"Faz-tudo em Itaboraí para reparos residenciais, instalações, montagem de móveis e manutenção. Consulte uma estimativa no site."},
+ {route:"/rio-de-janeiro/centro/",title:"Faz-Tudo no Centro do Rio | Reparos Residenciais | JeitoLar",description:"Faz-tudo no Centro do Rio para reparos, instalações e manutenção em apartamentos e residências. Faça uma estimativa online."},
+ {route:"/rio-de-janeiro/zona-sul/",title:"Faz-Tudo na Zona Sul do Rio | JeitoLar",description:"Faz-tudo na Zona Sul do Rio para reparos, instalações, montagem e manutenção residencial. Consulte sua estimativa online."},
+ {route:"/servicos/eletrica/",title:"Serviços Elétricos Residenciais | JeitoLar",description:"Tomadas, interruptores, luminárias, chuveiros e ventiladores. Selecione a região para consultar os valores de referência."},
+ {route:"/servicos/hidraulica/",title:"Serviços Hidráulicos Residenciais | JeitoLar",description:"Torneiras, pequenos vazamentos, filtros, caixas acopladas e vasos sanitários. Selecione sua região para consultar valores."},
+ {route:"/servicos/instalacoes/",title:"Instalações Residenciais | JeitoLar",description:"Suportes de TV, prateleiras, cortinas, persianas, máquina de lavar, coifa e depurador. Consulte os valores após selecionar a região."},
+ {route:"/servicos/montagem/",title:"Montagem de Móveis Residenciais | JeitoLar",description:"Montagem de móveis pequenos, cômodas, racks e guarda-roupas. Selecione a região para consultar os valores de referência."},
+ {route:"/servicos/pequenos-reparos/",title:"Pequenos Reparos Residenciais | JeitoLar",description:"Visita para reparos simples, fechaduras, ajustes e vedações. Selecione a região para consultar valores."},
+ {route:"/servicos/jardim-quintal/",title:"Jardinagem e Limpeza de Quintal | JeitoLar",description:"Roçagem, capina, limpeza de quintal, jardinagem, plantio e pequenas podas. Selecione a região para consultar valores."},
+ {route:"/servicos/piscina/",title:"Limpeza e Manutenção Básica de Piscina | JeitoLar",description:"Limpeza, aspiração, filtro e medição básica de piscina residencial. Selecione a região para consultar valores."},
+ {route:"/servicos/pacotes/",title:"Pacotes de 4h e 8h para Faz-Tudo | JeitoLar",description:"Pacotes por período para concentrar pequenos reparos, instalações, montagens e fixações elegíveis em uma única visita."}
+];
+const dist=path.resolve("dist"), source=fs.readFileSync(path.join(dist,"index.html"),"utf8");
+function apply(html,p){
+  const url=new URL(p.route,SITE).toString();
+  let out=html.replace(/<title>[\s\S]*?<\/title>/,`<title>${p.title}</title>`).replace(/<meta name="description" content="[^"]*"\/>/,`<meta name="description" content="${p.description.replaceAll('"','&quot;')}"/>`).replace(/<link rel="canonical" href="[^"]*"\/>/,`<link rel="canonical" href="${url}"/>`).replace(/<meta property="og:title" content="[^"]*"\/>/,`<meta property="og:title" content="${p.title.replaceAll('"','&quot;')}"/>`).replace(/<meta property="og:description" content="[^"]*"\/>/,`<meta property="og:description" content="${p.description.replaceAll('"','&quot;')}"/>`).replace(/<meta property="og:url" content="[^"]*"\/>/,`<meta property="og:url" content="${url}"/>`);
+  if(p.noindex) out=out.replace('<meta name="robots" content="index, follow, max-image-preview:large"/>','<meta name="robots" content="noindex, nofollow"/>');
+  return out;
+}
+for(const p of pages){const html=apply(source,p); if(p.route==="/") fs.writeFileSync(path.join(dist,"index.html"),html); else {const dir=path.join(dist,p.route);fs.mkdirSync(dir,{recursive:true});fs.writeFileSync(path.join(dir,"index.html"),html);}}
+const sitemap=`<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${pages.filter(p=>!p.noindex).map(p=>`  <url><loc>${new URL(p.route,SITE).toString()}</loc><changefreq>weekly</changefreq></url>`).join("\n")}\n</urlset>\n`;fs.writeFileSync(path.join(dist,"sitemap.xml"),sitemap);fs.writeFileSync(path.join(dist,"404.html"),source.replace('<meta name="robots" content="index, follow, max-image-preview:large"/>','<meta name="robots" content="noindex, nofollow"/>'));console.log(`Geradas ${pages.length} páginas SEO + sitemap.`);
