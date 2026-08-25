@@ -2,25 +2,37 @@ import { useEffect, useState } from "react";
 
 function isStandaloneMode() {
   if (typeof window === "undefined") return false;
-  return window.matchMedia?.("(display-mode: standalone)").matches || window.navigator.standalone === true;
+  return (
+    window.matchMedia?.("(display-mode: standalone)").matches ||
+    window.navigator.standalone === true
+  );
 }
 
 export default function SplashScreen() {
-  const [visible, setVisible] = useState(() => {
-    if (!isStandaloneMode()) return false;
-    try { return sessionStorage.getItem("jeitolarSplashSeen") !== "1"; }
-    catch { return true; }
-  });
+  // Sempre inicia oculto para o HTML do servidor bater com a hidratação.
+  const [visible, setVisible] = useState(false);
+
+  useEffect(() => {
+    if (!isStandaloneMode()) return;
+    try {
+      if (sessionStorage.getItem("jeitolarSplashSeen") === "1") return;
+    } catch {
+      /* sessionStorage indisponível: mostra mesmo assim */
+    }
+    setVisible(true);
+  }, []);
 
   useEffect(() => {
     if (!visible) return undefined;
-    let hideTimer;
     const timer = window.setTimeout(() => {
       setVisible(false);
-      try { sessionStorage.setItem("jeitolarSplashSeen", "1"); } catch {}
+      try {
+        sessionStorage.setItem("jeitolarSplashSeen", "1");
+      } catch {
+        /* ignora */
+      }
     }, 1150);
-    hideTimer = timer;
-    return () => window.clearTimeout(hideTimer);
+    return () => window.clearTimeout(timer);
   }, [visible]);
 
   if (!visible) return null;

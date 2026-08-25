@@ -1,12 +1,14 @@
 import { useEffect } from "react";
-import { useLocation } from "react-router-dom";
+import { useLocation } from "@tanstack/react-router";
 
 export default function ScrollManager() {
-  const { pathname, hash } = useLocation();
+  const location = useLocation();
+  const pathname = location.pathname;
+  const hash = location.hash;
 
   useEffect(() => {
     if (hash) {
-      const id = decodeURIComponent(hash.slice(1));
+      const id = decodeURIComponent(String(hash).replace(/^#/, ""));
       const scrollToAnchor = () => {
         const target = document.getElementById(id);
         if (target) target.scrollIntoView({ behavior: "smooth", block: "start" });
