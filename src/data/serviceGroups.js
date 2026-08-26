@@ -1,6 +1,6 @@
 export const serviceGroups = {
   eletrica: {
-    path: "/servicos/eletrica/", nome: "Elétrica", eyebrow: "Serviços elétricos residenciais",
+    path: "/servicos/eletrica", nome: "Elétrica", eyebrow: "Serviços elétricos residenciais",
     title: "Serviços Elétricos Residenciais | JeitoLar",
     description: "Tomadas, interruptores, luminárias, chuveiros, ventiladores, disjuntores e outros serviços elétricos leves. Selecione a região para consultar valores.",
     heading: "Elétrica residencial",
@@ -8,7 +8,7 @@ export const serviceGroups = {
     serviceIds: ["tomada-interruptor","luminaria","lampada-plafon","chuveiro","resistencia-chuveiro","ventilador","disjuntor","campainha","sensor-presenca","refletor"]
   },
   hidraulica: {
-    path: "/servicos/hidraulica/", nome: "Hidráulica", eyebrow: "Pequenos serviços hidráulicos",
+    path: "/servicos/hidraulica", nome: "Hidráulica", eyebrow: "Pequenos serviços hidráulicos",
     title: "Serviços Hidráulicos Residenciais | JeitoLar",
     description: "Torneiras, sifões, duchas, filtros, caixas acopladas, vasos e pequenos desentupimentos. Selecione sua região para consultar valores.",
     heading: "Hidráulica residencial",
@@ -16,7 +16,7 @@ export const serviceGroups = {
     serviceIds: ["torneira-vazamento","sifao","ducha-higienica","filtro-purificador","caixa-acoplada","vaso-sanitario","assento-sanitario","desentupimento-simples","acabamento-registro"]
   },
   instalacoes: {
-    path: "/servicos/instalacoes/", nome: "Instalações", eyebrow: "Instalações para a casa",
+    path: "/servicos/instalacoes", nome: "Instalações", eyebrow: "Instalações para a casa",
     title: "Instalações Residenciais | JeitoLar",
     description: "TV, prateleiras, cortinas, quadros, acessórios, varais, eletrodomésticos e suportes. Consulte os valores após selecionar a região.",
     heading: "Instalações residenciais",
@@ -24,7 +24,7 @@ export const serviceGroups = {
     serviceIds: ["suporte-tv","prateleira","cortina-persiana","quadro-espelho","acessorios-banheiro","varal-teto","maquina-lavar","coifa-depurador","suporte-microondas","soundbar","armario-parede"]
   },
   montagem: {
-    path: "/servicos/montagem/", nome: "Montagem", eyebrow: "Montagem de móveis",
+    path: "/servicos/montagem", nome: "Montagem", eyebrow: "Montagem de móveis",
     title: "Montagem de Móveis Residenciais | JeitoLar",
     description: "Montagem e desmontagem de móveis pequenos, mesas, racks, cômodas, camas, armários e guarda-roupas. Selecione a região para consultar valores.",
     heading: "Montagem de móveis",
@@ -32,7 +32,7 @@ export const serviceGroups = {
     serviceIds: ["movel-pequeno","comoda-rack","guarda-roupa-medio","mesa-escrivaninha","beliche","desmontar-guarda-roupa","cama","armario-pequeno"]
   },
   "pequenos-reparos": {
-    path: "/servicos/pequenos-reparos/", nome: "Pequenos reparos", eyebrow: "Manutenção do dia a dia",
+    path: "/servicos/pequenos-reparos", nome: "Pequenos reparos", eyebrow: "Manutenção do dia a dia",
     title: "Pequenos Reparos Residenciais | JeitoLar",
     description: "Visita para reparos simples, fechaduras, maçanetas, dobradiças, ajustes de porta e vedações. Selecione a região para consultar valores.",
     heading: "Pequenos reparos residenciais",
@@ -40,7 +40,7 @@ export const serviceGroups = {
     serviceIds: ["visita-reparo-simples","fechadura","macaneta-dobradica","ajuste-porta","vedacao-silicone"]
   },
   "jardim-quintal": {
-    path: "/servicos/jardim-quintal/", nome: "Jardim e quintal", eyebrow: "Área externa e jardinagem leve",
+    path: "/servicos/jardim-quintal", nome: "Jardim e quintal", eyebrow: "Área externa e jardinagem leve",
     title: "Jardinagem e Limpeza de Quintal | JeitoLar",
     description: "Roçagem, capina, limpeza de quintal, jardinagem básica, plantio e pequenas podas. Selecione a região para consultar valores.",
     heading: "Jardim, quintal e área externa",
@@ -48,7 +48,7 @@ export const serviceGroups = {
     serviceIds: ["rocagem-quintal","capina-quintal","manutencao-jardim","plantio-muda","transplante-vaso","poda-planta-arbusto","poda-arvore-pequena","limpeza-quintal","folhas-residuos"]
   },
   piscina: {
-    path: "/servicos/piscina/", nome: "Piscina", eyebrow: "Limpeza e cuidados básicos",
+    path: "/servicos/piscina", nome: "Piscina", eyebrow: "Limpeza e cuidados básicos",
     title: "Limpeza e Manutenção Básica de Piscina | JeitoLar",
     description: "Limpeza, aspiração, filtro e medição básica de pH e cloro. Selecione a região para consultar valores.",
     heading: "Limpeza e cuidados básicos de piscina",
@@ -56,7 +56,7 @@ export const serviceGroups = {
     serviceIds: ["limpeza-piscina","aspiracao-piscina","limpeza-filtro-piscina","tratamento-agua-piscina"]
   },
   pacotes: {
-    path: "/servicos/pacotes/", nome: "Pacotes", eyebrow: "Pacotes por período",
+    path: "/servicos/pacotes", nome: "Pacotes", eyebrow: "Pacotes por período",
     title: "Pacotes de 4h e 8h para Faz-Tudo | JeitoLar",
     description: "Pacotes de 4 e 8 horas de mão de obra para reunir pequenos reparos, instalações, montagens e fixações elegíveis no mesmo atendimento.",
     heading: "Pacotes de diária",

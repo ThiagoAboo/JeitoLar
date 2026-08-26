@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link } from "@tanstack/react-router";
 import { BUSINESS_CARD_WEB_URL, saveBusinessCard } from "../lib/businessCard";
 
 export default function PocketSection() {
@@ -9,11 +9,14 @@ export default function PocketSection() {
     setStatus("");
     try {
       const result = await saveBusinessCard();
-      setStatus(result === "shared"
-        ? "No celular, escolha a opção de salvar a imagem na galeria/fotos quando ela aparecer."
-        : "O cartão foi baixado. No celular, abra o arquivo e salve em Fotos/Galeria se necessário.");
+      setStatus(
+        result === "shared"
+          ? "No celular, escolha a opção de salvar a imagem na galeria/fotos quando ela aparecer."
+          : "O cartão foi baixado. No celular, abra o arquivo e salve em Fotos/Galeria se necessário.",
+      );
     } catch (error) {
-      if (error?.name !== "AbortError") setStatus("Não foi possível abrir o cartão. Tente novamente.");
+      if (error?.name !== "AbortError")
+        setStatus("Não foi possível abrir o cartão. Tente novamente.");
     }
   }
 
@@ -24,14 +27,30 @@ export default function PocketSection() {
           <span className="eyebrow">JeitoLar no bolso</span>
           <h2>Carregue o JeitoLar no bolso.</h2>
           <p>
-            Instale o JeitoLar no celular ou guarde nosso cartão de visita para ter os contatos sempre à mão.
+            Instale o JeitoLar no celular ou guarde nosso cartão de visita para ter os contatos
+            sempre à mão.
           </p>
           <div className="pocket-actions">
-            <Link className="btn" to="/instalar/">Instalar no celular</Link>
-            <Link className="btn-secondary-card" to="/card/cartao-imprimir.html" target="_blank" rel="noopener noreferrer">Imprimir cartão</Link>
-            <button type="button" className="btn-secondary-card" onClick={saveCard}>Salvar na galeria</button>
+            <Link className="btn" to="/instalar">
+              Instalar no celular
+            </Link>
+            <a
+              className="btn-secondary-card"
+              href="/card/cartao-imprimir.html"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Imprimir cartão
+            </a>
+            <button type="button" className="btn-secondary-card" onClick={saveCard}>
+              Salvar na galeria
+            </button>
           </div>
-          {status && <p className="pocket-status" role="status">{status}</p>}
+          {status && (
+            <p className="pocket-status" role="status">
+              {status}
+            </p>
+          )}
           <div className="pocket-contact-mini">
             <span>WhatsApp: (21) 99224-4753</span>
             <span>Instagram: @jeitolar.rj</span>
