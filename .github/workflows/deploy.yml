@@ -26,11 +26,15 @@ jobs:
           # Add any build-time env vars your app needs here
           VITE_WHATSAPP_NUMBER: ${{ secrets.VITE_WHATSAPP_NUMBER }}
 
+      - name: Verify Cloudflare build output
+        run: test -f .output/server/wrangler.json && test -f .output/server/index.mjs
+
       - name: Deploy to Cloudflare Workers
         uses: cloudflare/wrangler-action@v3
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          # Nitro writes the generated Worker entry and wrangler.json here.
-          workingDirectory: .output/server
-          command: deploy
+          wranglerVersion: "4.126.0"
+          # Keep the repository root as the working directory and explicitly
+          # point Wrangler to Nitro's generated configuration and entry point.
+          command: deploy --config .output/server/wrangler.json
